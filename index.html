@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quick Access Menu - JavaScript and HTML Topics</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 20px;
+            background-color: #f9f9f9;
+            color: #333;
+        }
+        h1, h2 {
+            color: #444;
+        }
+        table {
+            border-collapse: collapse;
+            width: 100%;
+            margin: 10px 0;
+        }
+        th, td {
+            padding: 10px;
+            text-align: left;
+            border: 1px solid #ddd;
+        }
+        th {
+            background-color: #4CAF50;
+            color: white;
+        }
+        .section {
+            margin-bottom: 40px;
+            padding: 20px;
+            background-color: #fff;
+            border: 1px solid #ccc;
+            border-radius: 10px;
+        }
+        .code-example {
+            background-color: #f8f9fa;
+            padding: 15px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            margin: 10px 0;
+        }
+        .output {
+            background-color: #e9f7ef;
+            padding: 10px;
+            border: 1px solid #27ae60;
+            border-radius: 5px;
+            margin: 10px 0;
+        }
+        .interactive {
+            background-color: #e8f4f8;
+            padding: 15px;
+            border: 1px solid #3498db;
+            border-radius: 5px;
+            margin: 10px 0;
+        }
+        button {
+            background-color: #3498db;
+            color: white;
+            border: none;
+            padding: 10px 15px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #2980b9;
+        }
+        input[type="text"] {
+            padding: 5px;
+            border-radius: 3px;
+            border: 1px solid #ccc;
+        }
+        #menu {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-bottom: 20px;
+        }
+        #menu button {
+            flex: 1;
+        }
+        #content {
+            min-height: 300px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Quick Access Menu - JavaScript and HTML Topics</h1>
+    <div id="menu"></div>
+    <div id="content" class="section"></div>
+
+    <script>
+        const topics = [
+            { id: 'example1', title: 'Introduction to JavaScript and basic syntax' },
+            { id: 'example2', title: 'Understanding ES6 arrow functions' },
+            { id: 'example3', title: 'JavaScript OOP working with classes' },
+            { id: 'example4', title: 'Working with promises for asynchronous code' },
+            { id: 'example5', title: 'Destructuring assignment for arrays and objects' },
+            { id: 'example6', title: 'Modules in JavaScript' },
+            { id: 'example7', title: 'HTML fundamentals' },
+            { id: 'example8', title: 'HTML Forms' },
+            { id: 'example9', title: 'HTML 5' },
+            { id: 'example10', title: 'HTML Tables Tutorial' },
+            { id: 'example11', title: 'HTML Media Tutorial' },
+            { id: 'example12', title: 'HTML vs XHTML' },
+            { id: 'example13', title: 'HTML Element Reference' },
+            { id: 'example14', title: 'Interactive Document Object Model (DOM) Programming Tutorial' }
+        ];
+
+        const menu = document.getElementById('menu');
+        const content = document.getElementById('content');
+
+        topics.forEach(topic => {
+            const button = document.createElement('button');
+            button.textContent = topic.title;
+            button.addEventListener('click', () => loadContent(topic.id));
+            menu.appendChild(button);
+        });
+
+        function loadContent(id) {
+            fetch(`${id}.html`)  // Fetching the corresponding HTML file
+                .then(response => {
+                    if (!response.ok) {  // Check if the response is OK (status 200)
+                        throw new Error('Network response was not ok');
+                    }
+                    return response.text();
+                })
+                .then(html => {
+                    content.innerHTML = html;  // Inserting the fetched HTML into the content div
+                })
+                .catch(error => {
+                    content.innerHTML = `<h2>Error</h2><p>Failed to load content for ${id}. Please make sure the file exists.</p>`;
+                });
+        }
+
+        // Load the first topic by default
+        loadContent(topics[0].id);
+    </script>
+</body>
+</html>

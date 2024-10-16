@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Working with Promises and GitHub API</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            background-color: #f9f9f9;
+            color: #333;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: auto;
+            background-color: #fff;
+            padding: 20px;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
+        }
+
+        h1 {
+            text-align: center;
+            color: #444;
+        }
+
+        .form-section {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        input {
+            margin: 10px 0;
+            padding: 10px;
+            width: calc(100% - 20px);
+            border: 2px solid #ccc;
+            border-radius: 5px;
+            font-size: 16px;
+        }
+
+        button {
+            padding: 10px 20px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        button:hover {
+            background-color: #45a049;
+        }
+
+        .output {
+            margin-top: 20px;
+            padding: 15px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            background-color: #f1f1f1;
+            font-family: monospace;
+        }
+
+        .repo-item {
+            margin-bottom: 10px;
+        }
+
+        .repo-item a {
+            text-decoration: none;
+            color: #4CAF50;
+            font-weight: bold;
+        }
+
+        .repo-item a:hover {
+            text-decoration: underline;
+        }
+
+        .user-info {
+            margin-top: 20px;
+            padding: 10px;
+            background-color: #e7f3fe;
+            border: 1px solid #b3d4fc;
+            border-radius: 5px;
+        }
+
+        .error {
+            color: red;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h1>Working with Promises and GitHub API</h1>
+
+    <div class="form-section">
+        <h2>Search for GitHub User</h2>
+        <p>Enter a GitHub username to fetch their profile and public repositories:</p>
+        <input type="text" id="githubUsername" placeholder="GitHub Username">
+        <button onclick="fetchGitHubUser()">Fetch User Info</button>
+    </div>
+
+    <div class="output user-info" id="userOutput"></div>
+    <div class="output" id="repoOutput"></div>
+</div>
+
+<script>
+    // Base URL for the GitHub API
+    const baseURL = 'https://api.github.com/users/';
+
+    // Function to fetch GitHub user info asynchronously using Promises
+    const fetchGitHubUser = () => {
+        const username = document.getElementById('githubUsername').value.trim(); // Get username from input
+
+        // Make the API request to fetch user info
+        fetch(`${baseURL}${username}`)
+            .then(response => {
+                // Check if the response is OK (status code 200-299)
+                if (!response.ok) {
+                    throw new Error('User not found'); // Throw error for not found
+                }
+                return response.json(); // Convert response to JSON
+            })
+            .then(user => {
+                // Display user's information in the output div
+                document.getElementById('userOutput').innerHTML = `
+                    <strong>User:</strong> ${user.login} <br>
+                    <strong>Name:</strong> ${user.name || 'N/A'} <br>
+                    <strong>Bio:</strong> ${user.bio || 'N/A'} <br>
+                    <strong>Followers:</strong> ${user.followers} | <strong>Following:</strong> ${user.following} <br>
+                    <strong>Profile Link:</strong> <a href="${user.html_url}" target="_blank">View Profile</a>
+                `;
+                // After fetching user info, fetch their repositories
+                fetchGitHubRepos(username);
+            })
+            .catch(error => {
+                // Handle any errors that occurred during the fetch or parsing
+                document.getElementById('userOutput').innerHTML = `<span class="error">Error: ${error.message}</span>`;
+                document.getElementById('repoOutput').innerHTML = ''; // Clear previous repo output
+            });
+    };
+
+    // Function to fetch GitHub repositories asynchronously
+    const fetchGitHubRepos = (username) => {
+        // Make the API request to get the user's repositories
+        fetch(`${baseURL}${username}/repos`)
+            .then(response => {
+                // Check if the response is OK
+                if (!response.ok) {
+                    throw new Error('Repos not found'); // Throw error for not found
+                }
+                return response.json(); // Convert response to JSON
+            })
+            .then(repos => {
+                displayRepos(repos); // Pass the repos data to the display function
+            })
+            .catch(error => {
+                // Handle any errors that occurred
+                document.getElementById('repoOutput').innerHTML = `<span class="error">Error: ${error.message}</span>`;
+            });
+    };
+
+    // Function to display the repositories
+    const displayRepos = (repos) => {
+        const outputDiv = document.getElementById('repoOutput');
+        outputDiv.innerHTML = ''; // Clear previous output
+
+        if (repos.length === 0) {
+            outputDiv.textContent = 'No repositories found for this user.';
+            return;
+        }
+
+        repos.forEach(repo => {
+            const repoItem = document.createElement('div');
+            repoItem.className = 'repo-item';
+
+            // Create a clickable link to the repository
+            const repoLink = document.createElement('a');
+            repoLink.href = repo.html_url;
+            repoLink.target = '_blank';
+            repoLink.textContent = repo.name;
+
+            // Append the link to the repoItem div
+            repoItem.appendChild(repoLink);
+
+            // Display additional details (stars, forks)
+            const repoDetails = document.createElement('p');
+            repoDetails.textContent = `⭐ Stars: ${repo.stargazers_count} | 🍴 Forks: ${repo.forks_count}`;
+            repoItem.appendChild(repoDetails);
+
+            // Append the repoItem div to the output div
+            outputDiv.appendChild(repoItem);
+        });
+    };
+</script>
+
+</body>
+</html>

@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Understanding ES6 Arrow Functions</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            line-height: 1.6;
+        }
+        .container {
+            max-width: 600px;
+            margin: auto;
+        }
+        input {
+            margin: 10px 0;
+            padding: 8px;
+            width: calc(100% - 20px);
+        }
+        button {
+            padding: 8px 12px;
+        }
+        .output {
+            margin-top: 10px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h1>Understanding ES6 Arrow Functions</h1>
+    <p>JavaScript ES6 introduced arrow functions, a more concise syntax for writing function expressions. They allow us to write shorter function declarations while maintaining the same functionality. In this document, we will explore several problems and solve them using arrow functions.</p>
+
+    <h2>Basic Syntax of Arrow Functions</h2>
+    <p>Arrow functions use the <code>=></code> syntax. Here are a few key points:</p>
+    <ul>
+        <li><strong>Simpler Syntax:</strong> Arrow functions allow you to omit the <code>function</code> keyword, making the code cleaner.</li>
+        <li><strong>Implicit Return:</strong> If the function body contains a single expression, you can omit the curly braces and the <code>return</code> statement.</li>
+        <li><strong>No Binding of <code>this</code>:</strong> Arrow functions do not have their own <code>this</code> context, making them ideal for methods that need to maintain the context of their enclosing scope.</li>
+    </ul>
+
+    <h2>Problem Solutions</h2>
+
+    <h3>Problem 1: Reverse a String Without Using Built-in Methods</h3>
+    <input type="text" id="stringInput" placeholder="Enter a string" />
+    <button onclick="displayResults()">Reverse String</button>
+    <div class="output" id="reversedOutput"></div>
+
+    <h3>Problem 2: Find the Longest Word in a Sentence</h3>
+    <input type="text" id="sentenceInput" placeholder="Enter a sentence" />
+    <button onclick="displayResults()">Find Longest Word</button>
+    <div class="output" id="longestWordOutput"></div>
+
+    <h3>Problem 3: Remove Duplicates from an Array</h3>
+    <input type="text" id="arrayInput" placeholder="Enter numbers separated by commas" />
+    <button onclick="displayResults()">Remove Duplicates</button>
+    <div class="output" id="uniqueArrayOutput"></div>
+
+    <h3>Problem 4: Validate an Email Using RegExp</h3>
+    <input type="text" id="emailInput" placeholder="Enter an email" />
+    <button onclick="displayResults()">Validate Email</button>
+    <div class="output" id="emailValidationOutput"></div>
+
+    <h2>Explanation of the Email Validation Regex</h2>
+    <p>The following regex is used to validate an email address:</p>
+    <pre><code>const regex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;</code></pre>
+    <h3>Explanation:</h3>
+    <ul>
+        <li><strong>^</strong>: Asserts the start of the string.</li>
+        <li><strong>[a-zA-Z0-9._%+-]+</strong>: Matches one or more alphanumeric characters or symbols (the local part of the email).</li>
+        <li><strong>@</strong>: Matches the literal `@` symbol.</li>
+        <li><strong>[a-zA-Z0-9.-]+</strong>: Matches one or more alphanumeric characters, dots, or hyphens (the domain part).</li>
+        <li><strong>\.</strong>: Matches a literal dot.</li>
+        <li><strong>[a-zA-Z]{2,}</strong>: Matches two or more alphabetic characters (the top-level domain).</li>
+        <li><strong>$</strong>: Asserts the end of the string.</li>
+    </ul>
+    <p>This regex ensures that the email follows a basic structure, making it a useful tool for validation.</p>
+
+</div>
+
+<script>
+    // Arrow function to reverse a string without using built-in methods
+    const reverseString = (str) => {
+        let reversed = ''; // Initialize an empty string to hold the reversed result
+        // Iterate from the end of the string to the beginning
+        for (let i = str.length - 1; i >= 0; i--) {
+            reversed += str[i]; // Append each character to the reversed string
+        }
+        return reversed; // Return the reversed string
+    };
+
+    // Arrow function to find the longest word in a sentence
+    const findLongestWord = (sentence) => {
+        const words = sentence.split(' '); // Split the sentence into words
+        let longestWord = ''; // Initialize the longest word variable
+        
+        // Iterate through each word in the array
+        for (let word of words) {
+            // Update longestWord if the current word is longer
+            if (word.length > longestWord.length) {
+                longestWord = word;
+            }
+        }
+        
+        return longestWord; // Return the longest word found
+    };
+
+    // Arrow function to remove duplicates from an array
+    const removeDuplicates = (arr) => {
+        const uniqueArray = []; // Array to hold unique elements
+        
+        // Iterate through the input array
+        for (let i = 0; i < arr.length; i++) {
+            // Check if the current element is not already in uniqueArray
+            if (!uniqueArray.includes(arr[i])) {
+                uniqueArray.push(arr[i]); // Add it to the uniqueArray if not present
+            }
+        }
+        
+        return uniqueArray; // Return the array of unique elements
+    };
+
+    // Arrow function to validate an email using Regular Expressions
+    const validateEmail = (email) => {
+        // Regular expression for validating an email
+        const regex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+        return regex.test(email); // Return true if email matches the regex, otherwise false
+    };
+
+    // Arrow function to display results on the web page
+    const displayResults = () => {
+        const strInput = document.getElementById('stringInput').value;
+        const sentenceInput = document.getElementById('sentenceInput').value;
+        const arrayInput = document.getElementById('arrayInput').value.split(',').map(Number);
+        const emailInput = document.getElementById('emailInput').value;
+
+        // Display results for each function
+        document.getElementById('reversedOutput').textContent = `Reversed String: ${reverseString(strInput)}`;
+        document.getElementById('longestWordOutput').textContent = `Longest Word: ${findLongestWord(sentenceInput)}`;
+        document.getElementById('uniqueArrayOutput').textContent = `Unique Array: ${removeDuplicates(arrayInput).join(', ')}`;
+        document.getElementById('emailValidationOutput').textContent = `Is Valid Email: ${validateEmail(emailInput)}`;
+    };
+
+</script>
+
+</body>
+</html>

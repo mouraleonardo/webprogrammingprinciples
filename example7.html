@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTML Fundamentals</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 20px;
+            background-color: #f9f9f9;
+            color: #333;
+        }
+        h1, h2 {
+            color: #444;
+        }
+        pre {
+            background-color: #e9e9e9;
+            padding: 10px;
+            border-radius: 5px;
+            overflow-x: auto;
+        }
+        .section {
+            margin-bottom: 40px;
+            padding: 20px;
+            background-color: #fff;
+            border: 1px solid #ccc;
+            border-radius: 10px;
+        }
+    </style>
+</head>
+<body>
+
+<div class="section">
+    <h1>HTML Fundamentals</h1>
+    <p>This document covers the basics of HTML, including essential tags, their usage, and differences between various attributes.</p>
+</div>
+
+<!-- HTML Basic -->
+<div class="section">
+    <h2>HTML Basics</h2>
+    <p>HTML (HyperText Markup Language) is the standard language for creating web pages. It uses a series of elements to structure content on the web.</p>
+    <pre><code>&lt;!DOCTYPE html&gt;
+&lt;html lang="en"&gt;
+    &lt;head&gt;&lt;/head&gt;
+    &lt;body&gt;&lt;/body&gt;
+&lt;/html&gt;</code></pre>
+</div>
+
+<!-- HTML Elements -->
+<div class="section">
+    <h2>HTML Elements</h2>
+    <p>An HTML element consists of a start tag, content, and an end tag.</p>
+    <pre><code>&lt;p&gt;This is a paragraph.&lt;/p&gt;</code></pre>
+</div>
+
+<!-- HTML Attributes -->
+<div class="section">
+    <h2>HTML Attributes</h2>
+    <p>Attributes provide additional information about an HTML element. They are always specified in the start tag.</p>
+    <pre><code>&lt;a href="https://www.example.com"&gt;Link&lt;/a&gt;</code></pre>
+</div>
+
+<!-- HTML Headings -->
+<div class="section">
+    <h2>HTML Headings</h2>
+    <p>HTML headings range from <code>&lt;h1&gt;</code> to <code>&lt;h6&gt;</code>. <code>&lt;h1&gt;</code> is the highest level, while <code>&lt;h6&gt;</code> is the lowest.</p>
+    <pre><code>&lt;h1&gt;Main Heading&lt;/h1&gt;
+&lt;h2&gt;Subheading&lt;/h2&gt;</code></pre>
+</div>
+
+<!-- HTML Paragraphs -->
+<div class="section">
+    <h2>HTML Paragraphs</h2>
+    <p>Paragraphs are defined using the <code>&lt;p&gt;</code> tag.</p>
+    <pre><code>&lt;p&gt;This is a paragraph.&lt;/p&gt;</code></pre>
+</div>
+
+<!-- HTML Styles -->
+<div class="section">
+    <h2>HTML Styles</h2>
+    <p>CSS can be used to style HTML elements. Styles can be applied inline, internally, or externally.</p>
+    <pre><code>&lt;p style="color: blue;"&gt;This text is blue.&lt;/p&gt;</code></pre>
+</div>
+
+<!-- HTML Formatting -->
+<div class="section">
+    <h2>HTML Formatting</h2>
+    <p>Text can be formatted using tags such as <code>&lt;b&gt;</code> for bold, <code>&lt;i&gt;</code> for italics, and <code>&lt;u&gt;</code> for underline.</p>
+    <pre><code>&lt;b&gt;Bold Text&lt;/b&gt;
+&lt;i&gt;Italic Text&lt;/i&gt;
+&lt;u&gt;Underlined Text&lt;/u&gt;</code></pre>
+</div>
+
+<!-- HTML Quotations -->
+<div class="section">
+    <h2>HTML Quotations</h2>
+    <p>Quotations can be added using <code>&lt;blockquote&gt;</code> for block quotations and <code>&lt;q&gt;</code> for inline quotations.</p>
+    <pre><code>&lt;blockquote&gt;This is a block quote.&lt;/blockquote&gt;
+&lt;q&gt;This is an inline quote.&lt;/q&gt;</code></pre>
+</div>
+
+<!-- HTML Comments -->
+<div class="section">
+    <h2>HTML Comments</h2>
+    <p>Comments can be added using the following syntax. Comments are not displayed in the browser.</p>
+    <pre><code>&lt;!-- This is a comment --&gt;</code></pre>
+</div>
+
+<!-- HTML Colors -->
+<div class="section">
+    <h2>HTML Colors</h2>
+    <p>Colors can be defined using names, HEX, RGB, or HSL values.</p>
+    <pre><code>&lt;p style="color: red;"&gt;Red Text&lt;/p&gt;
+&lt;p style="color: #00ff00;"&gt;Green Text&lt;/p&gt;</code></pre>
+</div>
+
+<!-- HTML CSS -->
+<div class="section">
+    <h2>HTML CSS</h2>
+    <p>CSS (Cascading Style Sheets) is used to style HTML elements. It can be applied directly in HTML, in a &lt;style&gt; tag, or in an external stylesheet.</p>
+    <pre><code>&lt;style&gt;
+    p { color: blue; }
+&lt;/style&gt;</code></pre>
+</div>
+
+<!-- HTML Links -->
+<div class="section">
+    <h2>HTML Links</h2>
+    <p>Links are created using the <code>&lt;a&gt;</code> tag. The <code>href</code> attribute specifies the URL of the page the link goes to.</p>
+    <pre><code>&lt;a href="https://www.example.com"&gt;Visit Example&lt;/a&gt;</code></pre>
+</div>
+
+<!-- HTML Images -->
+<div class="section">
+    <h2>HTML Images</h2>
+    <p>Images are embedded using the <code>&lt;img&gt;</code> tag, with the <code>src</code> attribute defining the image source.</p>
+    <pre><code>&lt;img src="image.jpg" alt="Description of Image"&gt;</code></pre>
+</div>
+
+<!-- HTML Favicon -->
+<div class="section">
+    <h2>HTML Favicon</h2>
+    <p>A favicon is a small icon associated with a website. It can be added in the <code>&lt;head&gt;</code> section.</p>
+    <pre><code>&lt;link rel="icon" href="favicon.ico"&gt;</code></pre>
+</div>
+
+<!-- HTML Page Title -->
+<div class="section">
+    <h2>HTML Page Title</h2>
+    <p>The page title is set using the <code>&lt;title&gt;</code> tag within the <code>&lt;head&gt;</code> section.</p>
+    <pre><code>&lt;title&gt;My Web Page&lt;/title&gt;</code></pre>
+</div>
+
+<!-- HTML Tables -->
+<div class="section">
+    <h2>HTML Tables</h2>
+    <p>Tables are created using the <code>&lt;table&gt;</code> tag, with <code>&lt;tr&gt;</code> for rows, <code>&lt;th&gt;</code> for header cells, and <code>&lt;td&gt;</code> for data cells.</p>
+    <pre><code>&lt;table&gt;
+    &lt;tr&gt;
+        &lt;th&gt;Header 1&lt;/th&gt;
+        &lt;th&gt;Header 2&lt;/th&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+        &lt;td&gt;Data 1&lt;/td&gt;
+        &lt;td&gt;Data 2&lt;/td&gt;
+    &lt;/tr&gt;
+&lt;/table&gt;</code></pre>
+</div>
+
+<!-- HTML Lists -->
+<div class="section">
+    <h2>HTML Lists</h2>
+    <p>Lists can be ordered (<code>&lt;ol&gt;</code>) or unordered (<code>&lt;ul&gt;</code>), with items defined using <code>&lt;li&gt;</code>.</p>
+    <pre><code>&lt;ul&gt;
+    &lt;li&gt;Item 1&lt;/li&gt;
+    &lt;li&gt;Item 2&lt;/li&gt;
+&lt;/ul&gt;</code></pre>
+</div>
+
+<!-- HTML Block & Inline -->
+<div class="section">
+    <h2>HTML Block & Inline</h2>
+    <p>Block elements take up the full width available, while inline elements only take up as much width as necessary.</p>
+    <pre><code>&lt;div&gt;This is a block element.&lt;/div&gt;
+&lt;span&gt;This is an inline element.&lt;/span&gt;</code></pre>
+</div>
+
+<!-- HTML Div -->
+<div class="section">
+    <h2>HTML Div</h2>
+    <p>The <code>&lt;div&gt;</code> tag is a block-level container for grouping elements and applying styles.</p>
+    <pre><code>&lt;div&gt;Content goes here.&lt;/div&gt;</code></pre>
+</div>
+
+<!-- HTML Classes -->
+<div class="section">
+    <h2>HTML Classes</h2>
+    <p>Classes are used to group elements for styling and can be applied to multiple elements.</p>
+    <pre><code>&lt;div class="my-class"&gt;Styled content&lt;/div&gt;</code></pre>
+</div>
+
+<!-- HTML Id -->
+<div class="section">
+    <h2>HTML Id</h2>
+    <p>The <code>id</code> attribute uniquely identifies an element on the page.</p>
+    <pre><code>&lt;div id="unique-element"&gt;Unique Content&lt;/div&gt;</code></pre>
+</div>
+
+<!-- HTML Iframes -->
+<div class="section">
+    <h2>HTML Iframes</h2>
+    <p>An <code>&lt;iframe&gt;</code> is used to embed another document within the current HTML document.</p>
+    <pre><code>&lt;iframe src="https://www.example.com"&gt;&lt;/iframe&gt;</code></pre>
+</div>
+
+<!-- HTML JavaScript -->
+<div class="section">
+    <h2>HTML JavaScript</h2>
+    <p>JavaScript can be embedded using the <code>&lt;script&gt;</code> tag.</p>
+    <pre><code>&lt;script&gt;
+    alert("Hello, World!");
+&lt;/script&gt;</code></pre>
+</div>
+
+<!-- HTML File Paths -->
+<div class="section">
+    <h2>HTML File Paths</h2>
+    <p>File paths can be absolute or relative. Absolute paths point to a specific location, while relative paths are based on the current document's location.</p>
+    <pre><code>&lt;a href="https://www.example.com"&gt;Absolute Link&lt;/a&gt;
+&lt;a href="images/pic.jpg"&gt;Relative Link&lt;/a&gt;</code></pre>
+</div>
+
+<!-- HTML Head -->
+<div class="section">
+    <h2>HTML Head</h2>
+    <p>The <code>&lt;head&gt;</code> section contains meta-information about the document, such as title and linked resources.</p>
+    <pre><code>&lt;head&gt;
+    &lt;title&gt;Document Title&lt;/title&gt;
+    &lt;link rel="stylesheet" href="styles.css"&gt;
+&lt;/head&gt;</code></pre>
+</div>
+
+<!-- HTML Layout -->
+<div class="section">
+    <h2>HTML Layout</h2>
+    <p>HTML provides the structure for web layouts, often using <code>&lt;div&gt;</code> and CSS for styling.</p>
+    <pre><code>&lt;div class="container"&gt;
+    &lt;header&gt;Header&lt;/header&gt;
+    &lt;nav&gt;Navigation&lt;/nav&gt;
+    &lt;main&gt;Main Content&lt;/main&gt;
+    &lt;footer&gt;Footer&lt;/footer&gt;
+&lt;/div&gt;</code></pre>
+</div>
+
+<!-- HTML Responsive -->
+<div class="section">
+    <h2>HTML Responsive</h2>
+    <p>Responsive design ensures that web pages look good on all devices. Use CSS media queries and flexible layouts.</p>
+    <pre><code>@media (max-width: 600px) {
+    body { background-color: lightblue; }
+}</code></pre>
+</div>
+
+<!-- HTML Computercode -->
+<div class="section">
+    <h2>HTML Computercode</h2>
+    <p>Computer code can be displayed using the <code>&lt;pre&gt;</code> and <code>&lt;code&gt;</code> tags.</p>
+    <pre><code>&lt;pre&gt;
+function hello() {
+    console.log("Hello, World!");
+}
+&lt;/pre&gt;</code></pre>
+</div>
+
+<!-- HTML Semantics -->
+<div class="section">
+    <h2>HTML Semantics</h2>
+    <p>Semantic HTML uses HTML markup to reinforce the meaning of the content. It improves accessibility and SEO.</p>
+    <pre><code>&lt;article&gt;...&lt;/article&gt;
+&lt;section&gt;...&lt;/section&gt;
+&lt;aside&gt;...&lt;/aside&gt;</code></pre>
+</div>
+
+<!-- HTML Style Guide -->
+<div class="section">
+    <h2>HTML Style Guide</h2>
+    <p>Consistent coding style improves readability. Use lowercase for tags and attributes, and properly indent your code.</p>
+    <pre><code>&lt;div class="container"&gt;
+    &lt;p&gt;Paragraph text&lt;/p&gt;
+&lt;/div&gt;</code></pre>
+</div>
+
+<!-- HTML Entities -->
+<div class="section">
+    <h2>HTML Entities</h2>
+    <p>HTML entities are used to display reserved characters. For example, use <code>&amp;</code> for & and <code>&lt;</code> for &lt;.</p>
+    <pre><code>&lt;p&gt;This &lt;p&gt; tag is a paragraph.&lt;/p&gt;</code></pre>
+</div>
+
+<!-- HTML Symbols -->
+<div class="section">
+    <h2>HTML Symbols</h2>
+    <p>Special symbols can be included using HTML entities, such as <code>&#169;</code> for © and <code>&#174;</code> for ®.</p>
+    <pre><code>&lt;p&gt;Copyright &#169; 2024&lt;/p&gt;</code></pre>
+</div>
+
+<!-- HTML Emojis -->
+<div class="section">
+    <h2>HTML Emojis</h2>
+    <p>Emojis can be included in HTML using Unicode or directly via their character representation.</p>
+    <pre><code>&lt;p&gt;I love programming! 😊&lt;/p&gt;</code></pre>
+</div>
+
+<!-- HTML Charsets -->
+<div class="section">
+    <h2>HTML Charsets</h2>
+    <p>Character encoding specifies how characters are represented. UTF-8 is the most common.</p>
+    <pre><code>&lt;meta charset="UTF-8"&gt;</code></pre>
+</div>
+
+<!-- HTML URL Encode -->
+<div class="section">
+    <h2>HTML URL Encode</h2>
+    <p>URL encoding replaces unsafe ASCII characters with a "%" followed by two hexadecimal digits.</p>
+    <pre><code>https://www.example.com/search?q=hello%20world</code></pre>
+</div>
+
+<!-- HTML vs. XHTML -->
+<div class="section">
+    <h2>HTML vs. XHTML</h2>
+    <p>HTML is more forgiving with syntax, while XHTML is a stricter version of HTML, requiring all elements to be properly nested and closed.</p>
+    <pre><code>&lt;img src="image.jpg" alt="Image"&gt;  <!-- HTML -->
+&lt;img src="image.jpg" alt="Image" /&gt;  <!-- XHTML --&gt;</code></pre>
+</div>
+
+</body>
+</html>

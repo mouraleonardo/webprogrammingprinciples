@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Introduction to JavaScript</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            line-height: 1.6;
+        }
+        .container {
+            max-width: 600px;
+            margin: auto;
+        }
+        input {
+            margin: 10px 0;
+            padding: 8px;
+            width: calc(100% - 20px);
+        }
+        button {
+            padding: 8px 12px;
+        }
+        .output {
+            margin-top: 10px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h1>Introduction to JavaScript</h1>
+    <p>JavaScript is a versatile programming language primarily used for web development. It allows developers to create dynamic and interactive web pages. Here, we'll explore some basic syntax and write functions to solve common problems.</p>
+
+    <h2>Basic Syntax</h2>
+    <p>JavaScript syntax is the set of rules that define a correctly structured JavaScript program. Below are some fundamental components:</p>
+    <ul>
+        <li><strong>Variables:</strong> Used to store data values. Declared using <code>let</code>, <code>const</code>, or <code>var</code>.</li>
+        <li><strong>Functions:</strong> Blocks of code designed to perform a specific task. They can be defined using the <code>function</code> keyword.</li>
+        <li><strong>Conditional Statements:</strong> Allow you to perform different actions based on different conditions using <code>if</code>, <code>else</code>, and <code>switch</code>.</li>
+        <li><strong>Loops:</strong> Used to execute a block of code repeatedly using <code>for</code>, <code>while</code>, or <code>do...while</code>.</li>
+    </ul>
+
+    <h2>Problem Solutions</h2>
+
+    <h3>Problem 1: Calculate the Factorial of a Number</h3>
+    <input type="number" id="factorialInput" placeholder="Enter a number" />
+    <button onclick="calculateFactorial()">Calculate Factorial</button>
+    <div class="output" id="factorialOutput"></div>
+
+    <h3>Problem 2: Check if a String is a Palindrome</h3>
+    <input type="text" id="palindromeInput" placeholder="Enter a string" />
+    <button onclick="checkPalindrome()">Check Palindrome</button>
+    <div class="output" id="palindromeOutput"></div>
+
+    <h3>Problem 3: Return the Larger of Two Numbers</h3>
+    <input type="number" id="number1Input" placeholder="Enter first number" />
+    <input type="number" id="number2Input" placeholder="Enter second number" />
+    <button onclick="findLargerNumber()">Find Larger Number</button>
+    <div class="output" id="largerNumberOutput"></div>
+</div>
+
+<script>
+    // Function to calculate the factorial of a number
+    function calculateFactorial() {
+        // Get the input value
+        let number = parseInt(document.getElementById('factorialInput').value);
+        let result = factorial(number); // Call the factorial function
+        document.getElementById('factorialOutput').innerText = `Factorial of ${number} is ${result}`;
+    }
+
+    /**
+     * Function to calculate the factorial of a number.
+     * @param {number} n - The number for which to calculate the factorial.
+     * @returns {number|string} - The factorial of the number or an error message for invalid input.
+     */
+    function factorial(n) {
+        if (n < 0) return "Factorial not defined for negative numbers"; // Factorial is not defined for negative integers
+        if (n === 0) return 1; // The factorial of 0 is 1
+
+        let result = 1; // Initialize result to 1
+        for (let i = 1; i <= n; i++) { // Loop from 1 to n
+            result *= i; // Multiply result by the current number i
+        }
+        return result; // Return the final result
+    }
+
+    // Function to check if a string is a palindrome
+    function checkPalindrome() {
+        // Get the input value
+        let str = document.getElementById('palindromeInput').value;
+        let result = isPalindrome(str); // Call the palindrome check function
+        document.getElementById('palindromeOutput').innerText = result ? `"${str}" is a palindrome.` : `"${str}" is not a palindrome.`;
+    }
+
+    /**
+     * Function to check if a string is a palindrome.
+     * @param {string} str - The string to check.
+     * @returns {boolean} - True if the string is a palindrome, false otherwise.
+     */
+    function isPalindrome(s) {
+        // Normalize the string: remove non-alphanumeric characters and convert to lowercase
+        let normalizedStr = s.replace(/[\W_]/g, '').toLowerCase();
+        // Check if the string is the same forwards and backwards
+        return normalizedStr === normalizedStr.split('').reverse().join('');
+    }
+
+    // Function to find the larger of two numbers
+    function findLargerNumber() {
+        // Get the input values
+        let num1 = parseFloat(document.getElementById('number1Input').value);
+        let num2 = parseFloat(document.getElementById('number2Input').value);
+        let result = getLargerNumber(num1, num2); // Call the function to find the larger number
+        document.getElementById('largerNumberOutput').innerText = `The larger number is ${result}`;
+    }
+
+    /**
+     * Function to return the larger of two numbers.
+     * @param {number} a - The first number.
+     * @param {number} b - The second number.
+     * @returns {number} - The larger of the two numbers.
+     */
+    function getLargerNumber(a, b) {
+        return a > b ? a : b; // Return the larger number using a conditional (ternary) operator
+    }
+</script>
+
+</body>
+</html>

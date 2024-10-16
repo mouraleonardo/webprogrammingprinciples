@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTML vs XHTML</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 20px;
+            background-color: #f9f9f9;
+            color: #333;
+        }
+        h1, h2 {
+            color: #444;
+        }
+        pre {
+            background-color: #e9e9e9;
+            padding: 10px;
+            border-radius: 5px;
+            overflow-x: auto;
+        }
+        .section {
+            margin-bottom: 40px;
+            padding: 20px;
+            background-color: #fff;
+            border: 1px solid #ccc;
+            border-radius: 10px;
+        }
+        .example {
+            background-color: #e9f7ef;
+            padding: 10px;
+            border: 1px solid #27ae60;
+            border-radius: 5px;
+            margin: 10px 0;
+        }
+        .code-example {
+            background-color: #f8f9fa;
+            padding: 15px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            margin: 10px 0;
+        }
+        table {
+            border-collapse: collapse;
+            width: 100%;
+            margin: 10px 0;
+        }
+        th, td {
+            padding: 8px;
+            text-align: left;
+        }
+        .demo-table {
+            border: 2px solid #333;
+        }
+        .demo-table th, .demo-table td {
+            border: 1px solid #666;
+        }
+        .styled-table {
+            background-color: #fff;
+        }
+        .styled-table th {
+            background-color: #4CAF50;
+            color: white;
+        }
+        .styled-table tr:nth-child(even) {
+            background-color: #f2f2f2;
+        }
+        .media-container {
+            margin: 20px 0;
+            padding: 15px;
+            background-color: #f5f5f5;
+            border-radius: 8px;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="section">
+        <h1>HTML Versus XHTML</h1>
+        <p>XHTML is a stricter, more XML-based version of HTML.</p>
+    </div>
+
+    <div class="section">
+        <h2>What is XHTML?</h2>
+        <ul>
+            <li>XHTML stands for EXtensible HyperText Markup Language.</li>
+            <li>XHTML is a stricter, more XML-based version of HTML.</li>
+            <li>XHTML is HTML defined as an XML application.</li>
+            <li>XHTML is supported by all major browsers.</li>
+        </ul>
+    </div>
+
+    <div class="section">
+        <h2>Why XHTML?</h2>
+        <p>XML is a markup language where all documents must be marked up correctly (be "well-formed").</p>
+        <p>XHTML was developed to make HTML more extensible and flexible to work with other data formats (such as XML). 
+        In addition, browsers ignore errors in HTML pages and try to display the website even if it has some errors in the markup. 
+        So XHTML comes with much stricter error handling.</p>
+    </div>
+
+    <div class="section">
+        <h2>The Most Important Differences from HTML</h2>
+        <ul>
+            <li><strong>&lt;!DOCTYPE&gt;</strong> is mandatory.</li>
+            <li>The <strong>xmlns</strong> attribute in <strong>&lt;html&gt;</strong> is mandatory.</li>
+            <li><strong>&lt;html&gt;, &lt;head&gt;, &lt;title&gt;, and &lt;body&gt;</strong> are mandatory.</li>
+            <li>Elements must always be properly nested.</li>
+            <li>Elements must always be closed.</li>
+            <li>Elements must always be in lowercase.</li>
+            <li>Attribute names must always be in lowercase.</li>
+            <li>Attribute values must always be quoted.</li>
+            <li>Attribute minimization is forbidden.</li>
+        </ul>
+    </div>
+
+    <div class="section">
+        <h2>XHTML - &lt;!DOCTYPE ....&gt; Is Mandatory</h2>
+        <p>An XHTML document must have an XHTML &lt;!DOCTYPE&gt; declaration.</p>
+        <p>The &lt;html&gt;, &lt;head&gt;, &lt;title&gt;, and &lt;body&gt; elements must also be present, and the xmlns attribute in &lt;html&gt; must specify the XML namespace for the document.</p>
+        <div class="code-example">
+            <pre>
+&lt;!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN"
+"http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd"&gt;
+&lt;html xmlns="http://www.w3.org/1999/xhtml"&gt;
+&lt;head&gt;
+    &lt;title&gt;Title of document&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    some content here...
+&lt;/body&gt;
+&lt;/html&gt;
+            </pre>
+        </div>
+    </div>
+
+    <div class="section">
+        <h2>XHTML Elements Must be Properly Nested</h2>
+        <p>In XHTML, elements must always be properly nested within each other:</p>
+        <div class="example">
+            <strong>Correct:</strong> 
+            <pre>&lt;b&gt;&lt;i&gt;Some text&lt;/i&gt;&lt;/b&gt;</pre>
+            <strong>Wrong:</strong> 
+            <pre>&lt;b&gt;&lt;i&gt;Some text&lt;/b&gt;&lt;/i&gt;</pre>
+        </div>
+        <p>In the "Correct" example, the <code>&lt;i&gt;</code> tag is properly nested inside the <code>&lt;b&gt;</code> tag, while in the "Wrong" example, the nesting is incorrect.</p>
+    </div>
+
+    <div class="section">
+        <h2>XHTML Elements Must Always be Closed</h2>
+        <p>In XHTML, elements must always be closed:</p>
+        <div class="example">
+            <strong>Correct:</strong> 
+            <pre>&lt;p&gt;This is a paragraph&lt;/p&gt;
+&lt;p&gt;This is another paragraph&lt;/p&gt;</pre>
+            <strong>Wrong:</strong> 
+            <pre>&lt;p&gt;This is a paragraph
+&lt;p&gt;This is another paragraph</pre>
+        </div>
+        <p>In the "Correct" example, both <code>&lt;p&gt;</code> tags are properly closed, while in the "Wrong" example, the first paragraph is not closed, which is invalid in XHTML.</p>
+    </div>
+
+    <div class="section">
+        <h2>XHTML Empty Elements Must Always be Closed</h2>
+        <p>In XHTML, empty elements must always be closed:</p>
+        <div class="example">
+            <strong>Correct:</strong> 
+            <pre>A break: &lt;br /&gt;<br>
+A horizontal rule: &lt;hr /&gt;<br>
+An image: &lt;img src="happy.gif" alt="Happy face" /&gt;</pre>
+            <strong>Wrong:</strong> 
+            <pre>A break: &lt;br&gt;<br>
+A horizontal rule: &lt;hr&gt;<br>
+An image: &lt;img src="happy.gif" alt="Happy face"&gt;</pre>
+        </div>
+        <p>The "Correct" example shows that each empty element is properly closed with a slash (e.g., <code>&lt;br /&gt;</code>), while the "Wrong" example omits the closing slash.</p>
+    </div>
+
+    <div class="section">
+        <h2>XHTML Elements Must be in Lowercase</h2>
+        <p>In XHTML, element names must always be in lowercase:</p>
+        <div class="example">
+            <strong>Correct:</strong> 
+            <pre>&lt;body&gt;
+&lt;p&gt;This is a paragraph&lt;/p&gt;
+&lt;/body&gt;</pre>
+            <strong>Wrong:</strong> 
+            <pre>&lt;BODY&gt;
+&lt;P&gt;This is a paragraph&lt;/P&gt;
+&lt;/BODY&gt;</pre>
+        </div>
+        <p>The "Correct" example uses lowercase for all element names, whereas the "Wrong" example uses uppercase, which is invalid in XHTML.</p>
+    </div>
+
+    <div class="section">
+        <h2>XHTML Attribute Names Must be in Lowercase</h2>
+        <p>In XHTML, attribute names must always be in lowercase:</p>
+        <div class="example">
+            <strong>Correct:</strong> 
+            <pre>&lt;a href="https://www.w3schools.com/html/"&gt;Visit our HTML tutorial&lt;/a&gt;</pre>
+            <strong>Wrong:</strong> 
+            <pre>&lt;a HREF="https://www.w3schools.com/html/"&gt;Visit our HTML tutorial&lt;/a&gt;</pre>
+        </div>
+        <p>The "Correct" example uses lowercase for the attribute name, while the "Wrong" example uses uppercase, which is not allowed in XHTML.</p>
+    </div>
+
+    <div class="section">
+        <h2>XHTML Attribute Values Must be Quoted</h2>
+        <p>In XHTML, attribute values must always be quoted:</p>
+        <div class="example">
+            <strong>Correct:</strong> 
+            <pre>&lt;a href="https://www.w3schools.com/html/"&gt;Visit our HTML tutorial&lt;/a&gt;</pre>
+            <strong>Wrong:</strong> 
+            <pre>&lt;a href=https://www.w3schools.com/html/&gt;Visit our HTML tutorial&lt;/a&gt;</pre>
+        </div>
+        <p>The "Correct" example shows the attribute value enclosed in quotes, while the "Wrong" example does not, making it invalid in XHTML.</p>
+    </div>
+
+    <div class="section">
+        <h2>XHTML Attribute Minimization is Forbidden</h2>
+        <p>In XHTML, attribute minimization is forbidden:</p>
+        <div class="example">
+            <strong>Correct:</strong> 
+            <pre>&lt;input type="checkbox" name="vehicle" value="car" checked="checked" /&gt;
+&lt;input type="text" name="lastname" disabled="disabled" /&gt;</pre>
+            <strong>Wrong:</strong> 
+            <pre>&lt;input type="checkbox" name="vehicle" value="car" checked /&gt;
+&lt;input type="text" name="lastname" disabled /&gt;</pre>
+        </div>
+        <p>In the "Correct" example, the attributes are fully defined with both names and values, whereas the "Wrong" example uses minimized attributes, which is not acceptable in XHTML.</p>
+    </div>
+
+    <div class="section">
+        <h2>Validate HTML With The W3C Validator</h2>
+        <p>Put your web address in the box below:</p>
+        <form action="https://validator.w3.org/check" method="get" target="_blank">
+            <input type="url" name="uri" placeholder="Enter your URL" required style="width: 300px; padding: 8px;">
+            <input type="submit" value="Validate" style="padding: 8px 15px;">
+        </form>
+    </div>
+
+</body>
+</html>

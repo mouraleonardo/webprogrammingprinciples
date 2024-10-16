@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Object Oriented Programming in JavaScript</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            line-height: 1.6;
+        }
+        .container {
+            max-width: 600px;
+            margin: auto;
+        }
+        input {
+            margin: 10px 0;
+            padding: 8px;
+            width: calc(100% - 20px);
+        }
+        button {
+            padding: 8px 12px;
+        }
+        .output {
+            margin-top: 10px;
+            font-weight: bold;
+        }
+        h3 {
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h1>Object Oriented Programming in JavaScript</h1>
+    <p>Object-oriented programming (OOP) is a programming paradigm that uses "objects" to design applications and computer programs. It utilizes concepts like classes, objects, inheritance, encapsulation, and polymorphism to create modular and reusable code.</p>
+    
+    <h2>Key Concepts of OOP</h2>
+    <ul>
+        <li><strong>Classes:</strong> Blueprints for creating objects. Classes encapsulate data for the object and methods to manipulate that data.</li>
+        <li><strong>Objects:</strong> Instances of classes. Each object can have its own properties and methods.</li>
+        <li><strong>Inheritance:</strong> A way to form new classes using classes that have already been defined. It allows for reusability and establishing a relationship between classes.</li>
+        <li><strong>Encapsulation:</strong> Bundling data and methods that operate on that data within one unit (class), restricting access to some of the object's components.</li>
+        <li><strong>Polymorphism:</strong> The ability to present the same interface for different underlying data types, allowing for flexibility and integration.</li>
+    </ul>
+
+    <h2>Understanding `super()`</h2>
+    <p>The <code>super()</code> function is essential in class inheritance, particularly in ES6 classes. Here's a detailed look:</p>
+    
+    <h3>What is <code>super()</code>?</h3>
+    <p>
+        The <code>super()</code> function is used to call the constructor of a parent class from within a derived (child) class. This allows the child class to inherit properties and methods from the parent class.
+    </p>
+    
+    <h3>How Does <code>super()</code> Work?</h3>
+    <ul>
+        <li><strong>Calling the Parent Constructor:</strong> When a child class extends a parent class, you must call <code>super()</code> in the child class's constructor to ensure that the parent class's constructor is executed.</li>
+        <li><strong>Initializing Parent Properties:</strong> By calling <code>super()</code>, you ensure that properties and methods defined in the parent class are available in the child class. Without it, you cannot use <code>this</code> in the child constructor, leading to an error.</li>
+    </ul>
+    
+    <h3>Example</h3>
+    <pre><code>
+        class Animal {
+            constructor(name) {
+                this.name = name; // Set the name property
+            }
+
+            speak() {
+                return \`\${this.name} makes a noise.\`;
+            }
+        }
+
+        class Dog extends Animal {
+            constructor(name, breed) {
+                super(name); // Call the parent constructor
+                this.breed = breed; // Set the additional breed property
+            }
+
+            speak() {
+                return \`\${this.name} barks.\`;
+            }
+        }
+
+        // Usage
+        const myDog = new Dog('Rex', 'Golden Retriever');
+        console.log(myDog.speak()); // Output: "Rex barks."
+        console.log(myDog.name); // Output: "Rex"
+        console.log(myDog.breed); // Output: "Golden Retriever"
+    </code></pre>
+    
+    <h3>Key Points to Remember</h3>
+    <ul>
+        <li>Always call <code>super()</code> before using <code>this</code> in the child class constructor.</li>
+        <li>You can pass arguments to <code>super()</code> to initialize properties inherited from the parent class.</li>
+        <li><code>super</code> can also be used to call parent methods, not just the constructor.</li>
+    </ul>
+
+    <h2>Problem 1: Person Class</h2>
+    <input type="text" id="nameInput" placeholder="Enter name" />
+    <input type="number" id="ageInput" placeholder="Enter age" />
+    <button onclick="introducePerson()">Introduce Person</button>
+    <div class="output" id="personOutput"></div>
+
+    <h2>Problem 2: Shape Class and Subclasses</h2>
+    <input type="number" id="circleRadiusInput" placeholder="Enter circle radius" />
+    <button onclick="calculateCircleArea()">Circle Area</button>
+    <div class="output" id="circleOutput"></div>
+
+    <input type="number" id="rectWidthInput" placeholder="Enter rectangle width" />
+    <input type="number" id="rectHeightInput" placeholder="Enter rectangle height" />
+    <button onclick="calculateRectangleArea()">Rectangle Area</button>
+    <div class="output" id="rectangleOutput"></div>
+
+    <h2>Problem 3: Animal and Dog Classes</h2>
+    <input type="text" id="dogNameInput" placeholder="Enter dog's name" />
+    <input type="number" id="dogAgeInput" placeholder="Enter dog's age" />
+    <button onclick="makeDogBark()">Dog Bark</button>
+    <div class="output" id="dogOutput"></div>
+
+</div>
+
+<script>
+    // Problem 1: Create a Person class
+    class Person {
+        constructor(name, age) {
+            this.name = name; // Set the name property
+            this.age = age;   // Set the age property
+        }
+
+        introduce() {
+            return `Hi, I'm ${this.name} and I'm ${this.age} years old.`; // Return introduction string
+        }
+    }
+
+    // Function to introduce a person
+    const introducePerson = () => {
+        const name = document.getElementById('nameInput').value; // Get name from input
+        const age = document.getElementById('ageInput').value;   // Get age from input
+        const person = new Person(name, age); // Create a new Person object
+        document.getElementById('personOutput').textContent = person.introduce(); // Display introduction
+    };
+
+    // Problem 2: Create Shape, Circle, and Rectangle classes
+    class Shape {
+        area() {
+            return 0; // Default area implementation for general shape
+        }
+    }
+
+    class Circle extends Shape {
+        constructor(radius) {
+            super(); // Call the parent constructor
+            this.radius = radius; // Set the radius property
+        }
+
+        area() {
+            return Math.PI * Math.pow(this.radius, 2); // Calculate area of circle
+        }
+    }
+
+    class Rectangle extends Shape {
+        constructor(width, height) {
+            super(); // Call the parent constructor
+            this.width = width;  // Set the width property
+            this.height = height; // Set the height property
+        }
+
+        area() {
+            return this.width * this.height; // Calculate area of rectangle
+        }
+    }
+
+    // Function to calculate circle area
+    const calculateCircleArea = () => {
+        const radius = document.getElementById('circleRadiusInput').value; // Get radius from input
+        const circle = new Circle(radius); // Create a new Circle object
+        document.getElementById('circleOutput').textContent = `Circle Area: ${circle.area().toFixed(2)}`; // Display area
+    };
+
+    // Function to calculate rectangle area
+    const calculateRectangleArea = () => {
+        const width = document.getElementById('rectWidthInput').value;  // Get width from input
+        const height = document.getElementById('rectHeightInput').value; // Get height from input
+        const rectangle = new Rectangle(width, height); // Create a new Rectangle object
+        document.getElementById('rectangleOutput').textContent = `Rectangle Area: ${rectangle.area()}`; // Display area
+    };
+
+    // Problem 3: Create Animal and Dog classes
+    class Animal {
+        constructor(name, age) {
+            this.name = name; // Set the name property
+            this.age = age;   // Set the age property
+        }
+
+        introduce() {
+            return `This is ${this.name}, a ${this.age} year old animal.`; // Return introduction string
+        }
+    }
+
+    class Dog extends Animal {
+        bark() {
+            return 'Woof! Woof!'; // Dog-specific behavior: barking
+        }
+    }
+
+    // Function to make the dog bark
+    const makeDogBark = () => {
+        const name = document.getElementById('dogNameInput').value; // Get dog's name from input
+        const age = document.getElementById('dogAgeInput').value;   // Get dog's age from input
+        const dog = new Dog(name, age); // Create a new Dog object
+        document.getElementById('dogOutput').textContent = `${dog.introduce()} ${dog.bark()}`; // Display dog info and bark
+    };
+</script>
+
+</body>
+</html>

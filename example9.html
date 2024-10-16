@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTML5 Tags</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 20px;
+            background-color: #f9f9f9;
+            color: #333;
+        }
+
+        h1,
+        h2 {
+            color: #444;
+        }
+
+        pre {
+            background-color: #e9e9e9;
+            padding: 10px;
+            border-radius: 5px;
+            overflow-x: auto;
+        }
+
+        .section {
+            margin-bottom: 40px;
+            padding: 20px;
+            background-color: #fff;
+            border: 1px solid #ccc;
+            border-radius: 10px;
+        }
+
+        .example {
+            background-color: #e9f7ef;
+            padding: 10px;
+            border: 1px solid #27ae60;
+            border-radius: 5px;
+        }
+
+        .form-example {
+            margin-top: 20px;
+            padding: 15px;
+            background-color: #f3f3f3;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>HTML5 Tags</h1>
+
+    <div class="section">
+        <h2>Basic Tags</h2>
+        <p>HTML5 introduces several new semantic elements that help structure web content. Here are some of the basic tags:</p>
+
+        <h3>&lt;!DOCTYPE&gt;</h3>
+        <p>The <!DOCTYPE> declaration defines the document type and version of HTML being used. For HTML5, it is written as:</p>
+        <pre><code>&lt;!DOCTYPE html&gt;</code></pre>
+
+        <h3>&lt;html&gt;</h3>
+        <p>The <code>&lt;html&gt;</code> tag is the root element of an HTML page. It wraps all the content on the page.</p>
+        <pre><code>&lt;html lang="en"&gt;
+    &lt;head&gt;...&lt;/head&gt;
+    &lt;body&gt;...&lt;/body&gt;
+&lt;/html&gt;</code></pre>
+
+        <h3>&lt;head&gt;</h3>
+        <p>The <code>&lt;head&gt;</code> element contains meta-information about the document, such as its title, character set, and linked resources.</p>
+        <pre><code>&lt;head&gt;
+    &lt;meta charset="UTF-8"&gt;
+    &lt;title&gt;Page Title&lt;/title&gt;
+&lt;/head&gt;</code></pre>
+
+        <h3>&lt;body&gt;</h3>
+        <p>The <code>&lt;body&gt;</code> tag contains the content of the document, such as text, images, and other media.</p>
+        <pre><code>&lt;body&gt;
+    &lt;h1&gt;Hello, World!&lt;/h1&gt;
+    &lt;p&gt;Welcome to my webpage.&lt;/p&gt;
+&lt;/body&gt;</code></pre>
+    </div>
+
+    <div class="section">
+        <h2>Text Content Tags</h2>
+        <p>HTML5 provides various tags for structuring text content:</p>
+
+        <h3>&lt;h1&gt; to &lt;h6&gt;</h3>
+        <p>Heading tags range from <code>&lt;h1&gt;</code> (most important) to <code>&lt;h6&gt;</code> (least important).</p>
+        <pre><code>&lt;h1&gt;Main Heading&lt;/h1&gt;
+&lt;h2&gt;Sub Heading&lt;/h2&gt;</code></pre>
+
+        <h3>&lt;p&gt;</h3>
+        <p>The <code>&lt;p&gt;</code> tag defines a paragraph of text.</p>
+        <pre><code>&lt;p&gt;This is a paragraph.&lt;/p&gt;</code></pre>
+
+        <h3>&lt;blockquote&gt;</h3>
+        <p>The <code>&lt;blockquote&gt;</code> tag is used for long quotations.</p>
+        <pre><code>&lt;blockquote&gt;
+    &lt;p&gt;This is a quote from someone important.&lt;/p&gt;
+&lt;/blockquote&gt;</code></pre>
+
+        <h3>&lt;strong&gt; and &lt;em&gt;</h3>
+        <p>The <code>&lt;strong&gt;</code> tag emphasizes text with strong importance, while <code>&lt;em&gt;</code> emphasizes text with normal importance.</p>
+        <pre><code>&lt;strong&gt;Important text&lt;/strong&gt;
+&lt;em&gt;Emphasized text&lt;/em&gt;</code></pre>
+    </div>
+
+    <div class="section">
+        <h2>Structural Tags</h2>
+        <p>HTML5 introduces new structural tags to enhance the semantic meaning of web pages:</p>
+
+        <h3>&lt;header&gt;</h3>
+        <p>The <code>&lt;header&gt;</code> tag represents introductory content, typically containing headings, logos, and navigation.</p>
+        <pre><code>&lt;header&gt;
+    &lt;h1&gt;Website Title&lt;/h1&gt;
+    &lt;nav&gt;...&lt;/nav&gt;
+&lt;/header&gt;</code></pre>
+
+        <h3>&lt;nav&gt;</h3>
+        <p>The <code>&lt;nav&gt;</code> tag defines a set of navigation links.</p>
+        <pre><code>&lt;nav&gt;
+    &lt;a href="home.html"&gt;Home&lt;/a&gt;
+    &lt;a href="about.html"&gt;About&lt;/a&gt;
+&lt;/nav&gt;</code></pre>
+
+        <h3>&lt;main&gt;</h3>
+        <p>The <code>&lt;main&gt;</code> tag specifies the main content of a document, excluding headers, footers, and sidebars.</p>
+        <pre><code>&lt;main&gt;
+    &lt;article&gt;...&lt;/article&gt;
+&lt;/main&gt;</code></pre>
+
+        <h3>&lt;footer&gt;</h3>
+        <p>The <code>&lt;footer&gt;</code> tag defines a footer for a document or section.</p>
+        <pre><code>&lt;footer&gt;
+    &lt;p&gt;Copyright © 2024&lt;/p&gt;
+&lt;/footer&gt;</code></pre>
+    </div>
+
+    <div class="section">
+        <h2>Media Tags</h2>
+        <p>HTML5 enhances support for audio and video content:</p>
+
+        <h3>&lt;audio&gt;</h3>
+        <p>The <code>&lt;audio&gt;</code> tag is used to embed sound content in documents.</p>
+        <pre><code>&lt;audio controls&gt;
+    &lt;source src="audio.mp3" type="audio/mpeg"&gt;
+    Your browser does not support the audio element.
+&lt;/audio&gt;</code></pre>
+
+        <h3>&lt;video&gt;</h3>
+        <p>The <code>&lt;video&gt;</code> tag is used to embed video content.</p>
+        <pre><code>&lt;video width="320" height="240" controls&gt;
+    &lt;source src="video.mp4" type="video/mp4"&gt;
+    Your browser does not support the video tag.
+&lt;/video&gt;</code></pre>
+    </div>
+
+    <div class="section">
+        <h2>Interactive Elements</h2>
+        <p>HTML5 introduces new interactive elements:</p>
+
+        <h3>&lt;canvas&gt;</h3>
+        <p>The <code>&lt;canvas&gt;</code> tag is used to draw graphics on the fly via scripting (usually JavaScript).</p>
+        <pre><code>&lt;canvas id="myCanvas" width="200" height="100"&gt;&lt;/canvas&gt;</code></pre>
+
+        <h3>&lt;details&gt; and &lt;summary&gt;</h3>
+        <p>The <code>&lt;details&gt;</code> tag creates a disclosure widget from which the user can obtain additional information or controls. The <code>&lt;summary&gt;</code> tag provides a summary or title for the details.</p>
+        <pre><code>&lt;details&gt;
+    &lt;summary&gt;More information&lt;/summary&gt;
+    &lt;p&gt;Here is some more information.&lt;/p&gt;
+&lt;/details&gt;</code></pre>
+    </div>
+
+    <div class="section">
+        <h2>Form Elements</h2>
+        <p>HTML5 includes several new input types for forms:</p>
+
+        <h3>&lt;input&gt; Types</h3>
+        <p>New input types include:</p>
+        <ul>
+            <li><strong>email</strong>: Validates the input to ensure it's an email address.</li>
+            <li><strong>url</strong>: Validates the input to ensure it's a URL.</li>
+            <li><strong>date</strong>: Provides a date picker.</li>
+            <li><strong>range</strong>: Creates a slider control.</li>
+        </ul>
+
+        <div class="form-example">
+            <h3>Example of Input Types</h3>
+            <form>
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required><br><br>
+
+                <label for="website">Website:</label>
+                <input type="url" id="website" name="website" required><br><br>
+
+                <label for="date">Choose a date:</label>
+                <input type="date" id="date" name="date"><br><br>
+
+                <label for="volume">Volume:</label>
+                <input type="range" id="volume" name="volume" min="0" max="100"><br><br>
+
+                <input type="submit" value="Submit">
+            </form>
+        </div>
+    </div>
+
+    <div class="section">
+        <h2>Semantic Tags</h2>
+        <p>Semantic tags give meaning to the web content and improve accessibility:</p>
+
+        <h3>&lt;article&gt;</h3>
+        <p>The <code>&lt;article&gt;</code> tag specifies independent, self-contained content.</p>
+        <pre><code>&lt;article&gt;
+    &lt;h2&gt;Article Title&lt;/h2&gt;
+    &lt;p&gt;This is the content of the article.&lt;/p&gt;
+&lt;/article&gt;</code></pre>
+
+        <h3>&lt;section&gt;</h3>
+        <p>The <code>&lt;section&gt;</code> tag defines a section of content, typically with a heading.</p>
+        <pre><code>&lt;section&gt;
+    &lt;h2&gt;Section Title&lt;/h2&gt;
+    &lt;p&gt;This is a section of content.&lt;/p&gt;
+&lt;/section&gt;</code></pre>
+
+        <h3>&lt;aside&gt;</h3>
+        <p>The <code>&lt;aside&gt;</code> tag represents content related to the surrounding content, like a sidebar.</p>
+        <pre><code>&lt;aside&gt;
+    &lt;p&gt;This is an aside content.&lt;/p&gt;
+&lt;/aside&gt;</code></pre>
+    </div>
+
+    <div class="section">
+        <h2>Table Tags</h2>
+        <p>HTML5 tables allow for structured data presentation:</p>
+
+        <h3>&lt;table&gt;</h3>
+        <p>The <code>&lt;table&gt;</code> tag is used to create a table.</p>
+        <pre><code>&lt;table&gt;
+    &lt;tr&gt;
+        &lt;th&gt;Header 1&lt;/th&gt;
+        &lt;th&gt;Header 2&lt;/th&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+        &lt;td&gt;Data 1&lt;/td&gt;
+        &lt;td&gt;Data 2&lt;/td&gt;
+    &lt;/tr&gt;
+&lt;/table&gt;</code></pre>
+    </div>
+
+    <div class="section">
+        <h2>Conclusion</h2>
+        <p>HTML5 brings a wealth of new tags and features that enhance the semantic meaning and functionality of web pages. Understanding these tags allows for better structuring of content and improved accessibility.</p>
+    </div>
+</body>
+
+</html>

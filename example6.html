@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GitHub User Fetcher</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            background-color: #f9f9f9;
+            color: #333;
+        }
+
+        .container {
+            max-width: 600px;
+            margin: auto;
+            background-color: #fff;
+            padding: 20px;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
+        }
+
+        h1 {
+            text-align: center;
+            color: #444;
+        }
+
+        input {
+            margin: 10px 0;
+            padding: 10px;
+            width: calc(100% - 20px);
+            border: 2px solid #ccc;
+            border-radius: 5px;
+            font-size: 16px;
+        }
+
+        button {
+            padding: 10px 20px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #45a049;
+        }
+
+        .output {
+            margin-top: 20px;
+            padding: 15px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            background-color: #f1f1f1;
+        }
+
+        .instructions {
+            background-color: #e9f5ff;
+            border: 1px solid #b3d7ff;
+            border-radius: 5px;
+            padding: 15px;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h1>GitHub User Fetcher</h1>
+    <input type="text" id="usernameInput" placeholder="Enter GitHub username" />
+    <button id="fetchButton">Fetch User Info</button>
+    
+    <div class="output" id="userOutput"></div>
+
+    <!-- Instructions on how to run the code -->
+    <div class="instructions">
+        <h3>How to Run This Code</h3>
+        <ol>
+            <li>Download or clone the project files to your local machine.</li>
+            <li>Ensure you have the following files in your project folder:
+                <ul>
+                    <li><code>index.html</code></li>
+                    <li><code>fetchUser.js</code></li>
+                </ul>
+            </li>
+            <li>To avoid CORS issues, use a local server to run the project. Here are a few options:
+                <ul>
+                    <li><strong>Using Live Server (VS Code Extension):</strong>
+                        <ul>
+                            <li>Install the Live Server extension from the Visual Studio Code marketplace.</li>
+                            <li>Open your <code>index.html</code> file in VS Code.</li>
+                            <li>Right-click on the HTML file and select <code>Open with Live Server</code>.</li>
+                        </ul>
+                    </li>
+                    <li><strong>Using http-server (Node.js package):</strong>
+                        <ul>
+                            <li>Make sure you have Node.js installed on your computer.</li>
+                            <li>Open your terminal/command prompt and navigate to your project folder.</li>
+                            <li>Run <code>npx http-server</code> (you may need to install it with <code>npm install -g http-server</code> first).</li>
+                            <li>Open your browser and go to <code>http://localhost:8080</code> (or the specified port).</li>
+                        </ul>
+                    </li>
+                </ul>
+            </li>
+            <li>Enter a GitHub username in the input field and click <code>Fetch User Info</code> to retrieve user information.</li>
+        </ol>
+    </div>
+</div>
+
+<script type="module">
+    // Importing functions from the fetchUser.js module
+    import { fetchUserData, displayUser } from './fetchUser.js';
+
+    // Adding event listener to the button to fetch user info
+    document.getElementById('fetchButton').addEventListener('click', async () => {
+        const username = document.getElementById('usernameInput').value; // Get username from input
+
+        try {
+            const userData = await fetchUserData(username); // Fetch user data
+            displayUser(userData); // Display user information
+        } catch (error) {
+            document.getElementById('userOutput').textContent = `Error: ${error.message}`;
+        }
+    });
+</script>
+
+</body>
+</html>
