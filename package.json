@@ -1,0 +1,12 @@
+{
+  "name": "webprogrammingprinciples",
+  "version": "1.0.0",
+  "description": "This resource is designed for students to explore core programming principles and modern web development using JavaScript ES6, HTML, CSS, DOM, AJAX, and JSON. It includes practical examples of ES6 features and essential web technologies to build dynamic web applications.",
+  "main": "fetchUser.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}

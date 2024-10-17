@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Car Information</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+        }
+        button {
+            margin: 10px;
+            padding: 10px 20px;
+            font-size: 16px;
+        }
+        #carInfo {
+            margin-top: 20px;
+            padding: 20px;
+            border: 2px solid #000;
+            width: 50%;
+            margin-left: auto;
+            margin-right: auto;
+            font-size: 18px;
+            background-color: #f4f4f4;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Select a Car Brand</h1>
+    <button onclick="changeContent('Porsche')">Porsche</button>
+    <button onclick="changeContent('Lamborghini')">Lamborghini</button>
+    <button onclick="changeContent('Chevy')">Chevy</button>
+    <button onclick="changeContent('Ford')">Ford</button>
+
+    <div id="carInfo">
+        Click a button to see information about a car brand.
+    </div>
+
+    <script>
+        function changeContent(carBrand) {
+            const carInfoDiv = document.getElementById("carInfo");
+            let content = "";
+
+            switch (carBrand) {
+                case 'Porsche':
+                    content = "<h2>Porsche</h2><p>Porsche is known for its high-performance sports cars, SUVs, and sedans. Their iconic 911 model is a symbol of luxury and speed.</p>";
+                    break;
+                case 'Lamborghini':
+                    content = "<h2>Lamborghini</h2><p>Lamborghini specializes in exotic, luxury supercars with aggressive designs and powerful V12 engines, like the Aventador and Huracán.</p>";
+                    break;
+                case 'Chevy':
+                    content = "<h2>Chevy</h2><p>Chevy, or Chevrolet, is a brand known for producing reliable trucks like the Silverado and popular sports cars like the Corvette.</p>";
+                    break;
+                case 'Ford':
+                    content = "<h2>Ford</h2><p>Ford is an American automaker famous for its trucks, such as the F-150, and classic cars like the Mustang.</p>";
+                    break;
+                default:
+                    content = "Click a button to see information about a car brand.";
+            }
+
+            carInfoDiv.innerHTML = content;
+        }
+    </script>
+
+</body>
+</html>

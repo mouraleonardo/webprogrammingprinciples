@@ -70,3 +70,36 @@ To make the most of these examples, you will need:
 - A modern web browser (e.g., Chrome, Firefox, or Edge) to run the HTML/JavaScript files.
 
 - Basic knowledge of JavaScript and web development (HTML, CSS).
+
+
+# Local Server Setup Guide
+
+## Initialize npm in the repository:
+
+```bash
+npm init -y
+```
+
+## Install the http-server package:
+
+```bash
+npm install http-server
+```
+
+## Run the server:
+
+```bash
+npx http-server
+```
+
+By default, this will start the server on port 8080. You can access the examples in your web browser at http://localhost:8080.
+
+## Accessing Example Files
+
+Once the server is running, you can navigate to any example file in your browser. For instance, to view the example for lesson 1, go to:
+
+```
+http://localhost:8080/example1.html
+```
+
+This setup allows you to explore the examples while simulating a web server environment, making it easier to test AJAX functionality and more complex web applications.
