@@ -99,7 +99,7 @@ By default, this will start the server on port 8080. You can access the examples
 Once the server is running, you can navigate to any example file in your browser. For instance, to view the example for lesson 1, go to:
 
 ```
-http://localhost:8080/example1.html
+http://localhost:8080/index.html
 ```
 
 This setup allows you to explore the examples while simulating a web server environment, making it easier to test AJAX functionality and more complex web applications.
