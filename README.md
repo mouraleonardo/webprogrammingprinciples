@@ -83,13 +83,13 @@ npm init -y
 ## Install the http-server package:
 
 ```bash
-npm install http-server
+npm install -g http-server
 ```
 
 ## Run the server:
 
 ```bash
-npx http-server
+http-server
 ```
 
 By default, this will start the server on port 8080. You can access the examples in your web browser at http://localhost:8080.
