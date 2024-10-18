@@ -59,6 +59,7 @@ You can open your browser's developer tools (press `F12` or `Ctrl+Shift+I` in mo
 - `example12.html`: HTML vs XHTML.
 - `example13.html`: HTML Element Reference.
 - `example14.html`: Interactive Document Object Model (DOM) Programming Tutorial
+- `example15.html`: EcoTravel - Discover the World, Sustainably (Assignment Sample)
 - ... more to be added as the course progresses.
 
 ---
