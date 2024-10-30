@@ -1,0 +1,681 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS Tutorial</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 20px;
+            background-color: #f9f9f9;
+            color: #333;
+        }
+        h1, h2 {
+            color: #444;
+        }
+        .section {
+            margin-bottom: 40px;
+            padding: 20px;
+            background-color: #fff;
+            border: 1px solid #ccc;
+            border-radius: 10px;
+        }
+        .example {
+            background-color: #e9f7ef;
+            padding: 10px;
+            border: 1px solid #27ae60;
+            border-radius: 5px;
+            margin: 10px 0;
+        }
+        .code-example {
+            background-color: #f8f9fa;
+            padding: 15px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            margin: 10px 0;
+            white-space: pre;
+            overflow-x: auto;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>CSS Tutorial</h1>
+
+    <div class="section">
+        <h2>CSS Syntax</h2>
+        <p>CSS is written in a simple syntax consisting of selectors and declaration blocks. Each declaration block contains properties and values.</p>
+        <div class="code-example">
+            <pre>
+selector {
+    property: value;
+}
+            </pre>
+        </div>
+        <p>Example:</p>
+        <div class="code-example">
+            <pre>
+h1 {
+    color: blue;
+}
+            </pre>
+        </div>
+    </div>
+
+    <div class="section">
+        <h2>CSS Selectors</h2>
+        <p>Selectors are patterns used to select the elements you want to style. Types of selectors include:</p>
+        <ul>
+            <li><strong>Element Selector:</strong> Selects all elements of a given type.</li>
+            <li><strong>Class Selector:</strong> Selects elements with a specific class attribute (e.g., <code>.className</code>).</li>
+            <li><strong>ID Selector:</strong> Selects an element with a specific ID (e.g., <code>#idName</code>).</li>
+        </ul>
+        <p>Example:</p>
+        <div class="code-example">
+            <pre>
+p {
+    font-size: 16px;
+}
+.className {
+    background-color: yellow;
+}
+#idName {
+    margin: 20px;
+}
+            </pre>
+        </div>
+    </div>
+
+    <div class="section">
+        <h2>CSS How To</h2>
+        <p>To apply CSS styles, you can use inline styles, internal styles, or external styles:</p>
+        <ul>
+            <li><strong>Inline Styles:</strong> Apply CSS directly on an element using the <code>style</code> attribute.</li>
+            <li><strong>Internal Styles:</strong> Include CSS in the <code>&lt;head&gt;</code> of your HTML document using a <code>&lt;style&gt;</code> tag.</li>
+            <li><strong>External Styles:</strong> Link to a separate CSS file using the <code>&lt;link&gt;</code> tag.</li>
+        </ul>
+    </div>
+
+    <div class="section">
+        <h2>CSS Comments</h2>
+        <p>Comments in CSS are used to leave notes and are not rendered in the browser. They start with <code>/*</code> and end with <code>*/</code>.</p>
+        <div class="code-example">
+            <pre>
+/* This is a comment */
+p {
+    color: red; /* This sets the text color */
+}
+            </pre>
+        </div>
+    </div>
+
+    <div class="section">
+        <h2>CSS Colors</h2>
+        <p>CSS allows you to use various formats to define colors:</p>
+        <ul>
+            <li><strong>Named Colors:</strong> e.g., <code>red</code>, <code>blue</code></li>
+            <li><strong>Hexadecimal:</strong> e.g., <code>#ff0000</code> for red</li>
+            <li><strong>RGB:</strong> e.g., <code>rgb(255, 0, 0)</code> for red</li>
+        </ul>
+        <p>Example:</p>
+        <div class="code-example">
+            <pre>
+body {
+    background-color: #f0f0f0;
+}
+h1 {
+    color: rgb(0, 128, 0);
+}
+            </pre>
+        </div>
+    </div>
+
+    <div class="section">
+        <h2>CSS Backgrounds</h2>
+        <p>CSS backgrounds can be applied to elements using the <code>background-color</code> property or by using images.</p>
+        <div class="code-example">
+            <pre>
+div {
+    background-color: lightblue;
+    background-image: url('image.jpg');
+    background-size: cover;
+}
+            </pre>
+        </div>
+    </div>
+
+    <div class="section">
+        <h2>CSS Borders</h2>
+        <p>CSS borders can be applied to elements using the <code>border</code> property.</p>
+        <div class="code-example">
+            <pre>
+div {
+    border: 2px solid black;
+    border-radius: 5px; /* Rounded corners */
+}
+            </pre>
+        </div>
+    </div>
+
+    <div class="section">
+        <h2>CSS Margins</h2>
+        <p>Margins create space around elements. You can set margins for all sides or individually.</p>
+        <div class="code-example">
+            <pre>
+div {
+    margin: 20px; /* All sides */
+    margin-top: 10px; /* Top */
+}
+            </pre>
+        </div>
+    </div>
+
+    <div class="section">
+        <h2>CSS Padding</h2>
+        <p>Padding creates space inside elements. It is the space between the content and the border.</p>
+        <div class="code-example">
+            <pre>
+div {
+    padding: 15px; /* All sides */
+    padding-left: 10px; /* Left */
+}
+            </pre>
+        </div>
+    </div>
+
+    <div class="section">
+        <h2>CSS Height/Width</h2>
+        <p>You can set the height and width of elements using the <code>height</code> and <code>width</code> properties.</p>
+        <div class="code-example">
+            <pre>
+div {
+    width: 300px;
+    height: 150px;
+}
+            </pre>
+        </div>
+    </div>
+
+    <div class="section">
+        <h2>CSS Box Model</h2>
+        <p>The CSS box model consists of margins, borders, padding, and the content area.</p>
+        <div class="code-example">
+            <pre>
+div {
+    width: 300px;
+    padding: 20px;
+    border: 5px solid black;
+    margin: 10px;
+}
+            </pre>
+        </div>
+    </div>
+
+    <div class="section">
+        <h2>CSS Outline</h2>
+        <p>The <code>outline</code> property is similar to borders but does not take up space in the box model.</p>
+        <div class="code-example">
+            <pre>
+div {
+    outline: 2px dashed red;
+}
+            </pre>
+        </div>
+    </div>
+
+    <div class="section">
+        <h2>CSS Text</h2>
+        <p>You can style text using properties like <code>color</code>, <code>text-align</code>, and <code>line-height</code>.</p>
+        <div class="code-example">
+            <pre>
+p {
+    color: navy;
+    text-align: center;
+    line-height: 1.5;
+}
+            </pre>
+        </div>
+    </div>
+
+    <div class="section">
+        <h2>CSS Fonts</h2>
+        <p>You can set font properties such as <code>font-family</code>, <code>font-size</code>, and <code>font-weight</code>.</p>
+        <div class="code-example">
+            <pre>
+h1 {
+    font-family: 'Arial', sans-serif;
+    font-size: 24px;
+    font-weight: bold;
+}
+            </pre>
+        </div>
+    </div>
+
+    <div class="section">
+        <h2>CSS Icons</h2>
+        <p>CSS can be used to style icon fonts like Font Awesome or use SVG images.</p>
+        <div class="code-example">
+            <pre>
+.icon {
+    font-family: 'Font Awesome 5 Free';
+    font-weight: 900;
+}
+            </pre>
+        </div>
+    </div>
+
+    <div class="section">
+        <h2>CSS Links</h2>
+        <p>You can style links using the <code>a</code> selector and pseudo-classes like <code>:hover</code>.</p>
+        <div class="code-example">
+            <pre>
+a {
+    color: blue;
+    text-decoration: none;
+}
+a:hover {
+    color: red;
+}
+            </pre>
+        </div>
+    </div>
+
+    <div class="section">
+        <h2>CSS Lists</h2>
+        <p>Lists can be styled using <code>list-style-type</code> and padding.</p>
+        <div class="code-example">
+            <pre>
+ul {
+    list-style-type: square;
+    padding-left: 20px;
+}
+            </pre>
+        </div>
+    </div>
+
+    <div class="section">
+        <h2>CSS Tables</h2>
+        <p>Tables can be styled using properties like <code>border</code>, <code>border-collapse</code>, and <code>padding</code>.</p>
+        <div class="code-example">
+            <pre>
+table {
+    border-collapse: collapse;
+    width: 100%;
+}
+td {
+    border: 1px solid black;
+    padding: 8px;
+}
+            </pre>
+        </div>
+    </div>
+
+    <div class="section">
+        <h2>CSS Display</h2>
+        <p>The <code>display</code> property specifies the display behavior of an element. Common values include <code>block</code>, <code>inline</code>, and <code>flex</code>.</p>
+        <div class="code-example">
+            <pre>
+div {
+    display: block;
+}
+span {
+    display: inline;
+}
+.container {
+    display: flex;
+}
+            </pre>
+        </div>
+    </div>
+
+    <div class="section">
+        <h2>CSS Max-width</h2>
+        <p>The <code>max-width</code> property sets the maximum width of an element. It prevents the width from exceeding a specified value.</p>
+        <div class="code-example">
+            <pre>
+div {
+    max-width: 600px;
+}
+            </pre>
+        </div>
+    </div>
+
+    <div class="section">
+        <h2>CSS Position</h2>
+        <p>The <code>position</code> property specifies how an element is positioned in the document. Common values include <code>static</code>, <code>relative</code>, <code>absolute</code>, and <code>fixed</code>.</p>
+        <div class="code-example">
+            <pre>
+.relative {
+    position: relative;
+    top: 10px;
+    left: 20px;
+}
+.absolute {
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+            </pre>
+        </div>
+    </div>
+
+    <div class="section">
+        <h2>CSS Z-index</h2>
+        <p>The <code>z-index</code> property specifies the stack order of elements. Higher values are displayed in front of lower values.</p>
+        <div class="code-example">
+            <pre>
+div {
+    position: absolute;
+    z-index: 10;
+}
+            </pre>
+        </div>
+    </div>
+
+    <div class="section">
+        <h2>CSS Overflow</h2>
+        <p>The <code>overflow</code> property controls what happens to content that is too large for its container. Options include <code>visible</code>, <code>hidden</code>, <code>scroll</code>, and <code>auto</code>.</p>
+        <div class="code-example">
+            <pre>
+div {
+    overflow: hidden;
+}
+            </pre>
+        </div>
+    </div>
+
+    <div class="section">
+        <h2>CSS Float</h2>
+        <p>The <code>float</code> property is used for positioning elements to the left or right, allowing text to wrap around them.</p>
+        <div class="code-example">
+            <pre>
+img {
+    float: left;
+    margin-right: 10px;
+}
+            </pre>
+        </div>
+    </div>
+
+    <div class="section">
+        <h2>CSS Inline-block</h2>
+        <p>The <code>display: inline-block</code> property allows elements to sit next to each other while still allowing width and height to be set.</p>
+        <div class="code-example">
+            <pre>
+div {
+    display: inline-block;
+    width: 100px;
+    height: 100px;
+    margin: 10px;
+}
+            </pre>
+        </div>
+    </div>
+
+    <div class="section">
+        <h2>CSS Align</h2>
+        <p>Text alignment can be achieved using the <code>text-align</code> property, and flexbox can be used to align items in a container.</p>
+        <div class="code-example">
+            <pre>
+.container {
+    display: flex;
+    justify-content: center; /* Aligns horizontally */
+    align-items: center; /* Aligns vertically */
+}
+            </pre>
+        </div>
+    </div>
+
+    <div class="section">
+        <h2>CSS Combinators</h2>
+        <p>Combinators describe the relationship between selectors:</p>
+        <ul>
+            <li><strong>Descendant Selector:</strong> <code>div p</code> selects all <code>p</code> elements inside <code>div</code> elements.</li>
+            <li><strong>Child Selector:</strong> <code>div > p</code> selects all <code>p</code> elements that are direct children of <code>div</code>.</li>
+            <li><strong>Adjacent Sibling Selector:</strong> <code>h1 + p</code> selects the first <code>p</code> element after any <code>h1</code>.</li>
+            <li><strong>General Sibling Selector:</strong> <code>h1 ~ p</code> selects all <code>p</code> elements after any <code>h1</code>.</li>
+        </ul>
+    </div>
+
+    <div class="section">
+        <h2>CSS Pseudo-classes</h2>
+        <p>Pseudo-classes are used to define the special state of an element. Examples include:</p>
+        <ul>
+            <li><code>:hover</code></li>
+            <li><code>:focus</code></li>
+            <li><code>:nth-child()</code></li>
+        </ul>
+        <div class="code-example">
+            <pre>
+a:hover {
+    color: red;
+}
+li:nth-child(2) {
+    background-color: yellow;
+}
+            </pre>
+        </div>
+    </div>
+
+    <div class="section">
+        <h2>CSS Pseudo-elements</h2>
+        <p>Pseudo-elements are used to style specific parts of an element. Examples include:</p>
+        <ul>
+            <li><code>::before</code></li>
+            <li><code>::after</code></li>
+            <li><code>::first-line</code></li>
+        </ul>
+        <div class="code-example">
+            <pre>
+p::first-line {
+    font-weight: bold;
+}
+p::before {
+    content: "Note: ";
+    color: red;
+}
+            </pre>
+        </div>
+    </div>
+
+    <div class="section">
+        <h2>CSS Opacity</h2>
+        <p>The <code>opacity</code> property sets the transparency level of an element, where <code>0</code> is fully transparent and <code>1</code> is fully opaque.</p>
+        <div class="code-example">
+            <pre>
+div {
+    opacity: 0.5; /* 50% transparent */
+}
+            </pre>
+        </div>
+    </div>
+
+    <div class="section">
+        <h2>CSS Navigation Bar</h2>
+        <p>A navigation bar can be styled using flexbox for layout and hover effects for links.</p>
+        <div class="code-example">
+            <pre>
+nav {
+    display: flex;
+    background-color: #333;
+}
+nav a {
+    color: white;
+    padding: 14px 20px;
+    text-decoration: none;
+}
+nav a:hover {
+    background-color: #575757;
+}
+            </pre>
+        </div>
+    </div>
+
+    <div class="section">
+        <h2>CSS Dropdowns</h2>
+        <p>Dropdown menus can be created using nested lists and CSS for styling.</p>
+        <div class="code-example">
+            <pre>
+ul {
+    position: relative;
+}
+ul li:hover ul {
+    display: block;
+}
+ul ul {
+    display: none;
+    position: absolute;
+}
+            </pre>
+        </div>
+    </div>
+
+    <div class="section">
+        <h2>CSS Image Gallery</h2>
+        <p>Image galleries can be styled using CSS grid or flexbox for a responsive layout.</p>
+        <div class="code-example">
+            <pre>
+.gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 10px;
+}
+            </pre>
+        </div>
+    </div>
+
+    <div class="section">
+        <h2>CSS Image Sprites</h2>
+        <p>Image sprites combine multiple images into one for better performance.</p>
+        <div class="code-example">
+            <pre>
+.sprite {
+    background-image: url('sprites.png');
+    background-position: -10px -10px; /* Adjust for specific icon */
+    width: 50px;
+    height: 50px;
+}
+            </pre>
+        </div>
+    </div>
+
+    <div class="section">
+        <h2>CSS Attribute Selectors</h2>
+        <p>Attribute selectors allow you to style elements based on their attributes.</p>
+        <div class="code-example">
+            <pre>
+input[type="text"] {
+    border: 1px solid #ccc;
+}
+a[target="_blank"] {
+    color: blue;
+}
+            </pre>
+        </div>
+    </div>
+
+    <div class="section">
+        <h2>CSS Forms</h2>
+        <p>Forms can be styled using various CSS properties for inputs, buttons, and labels.</p>
+        <div class="code-example">
+            <pre>
+input {
+    padding: 10px;
+    border: 1px solid #ccc;
+}
+button {
+    background-color: blue;
+    color: white;
+}
+            </pre>
+        </div>
+    </div>
+
+    <div class="section">
+        <h2>CSS Counters</h2>
+        <p>CSS counters can be used to create numbered lists automatically.</p>
+        <div class="code-example">
+            <pre>
+ol {
+    counter-reset: item;
+}
+ol li {
+    counter-increment: item;
+}
+ol li::before {
+    content: counter(item) ". ";
+}
+            </pre>
+        </div>
+    </div>
+
+    <div class="section">
+        <h2>CSS Website Layout</h2>
+        <p>Layouts can be created using CSS grid or flexbox for responsive design.</p>
+        <div class="code-example">
+            <pre>
+.container {
+    display: grid;
+    grid-template-columns: 1fr 3fr;
+}
+.sidebar {
+    grid-column: 1;
+}
+.content {
+    grid-column: 2;
+}
+            </pre>
+        </div>
+    </div>
+
+    <div class="section">
+        <h2>CSS Units</h2>
+        <p>CSS supports various units such as pixels (<code>px</code>), percentages (<code>%</code>), ems (<code>em</code>), and rems (<code>rem</code>).</p>
+        <div class="code-example">
+            <pre>
+div {
+    width: 50%; /* 50% of the parent element */
+    padding: 1em; /* 1em based on the font size */
+}
+            </pre>
+        </div>
+    </div>
+
+    <div class="section">
+        <h2>CSS Specificity</h2>
+        <p>Specificity determines which CSS rule is applied when multiple rules could apply to the same element.</p>
+        <ul>
+            <li>Inline styles have the highest specificity.</li>
+            <li>ID selectors are more specific than class selectors.</li>
+            <li>Class selectors are more specific than element selectors.</li>
+        </ul>
+    </div>
+
+    <div class="section">
+        <h2>CSS !important</h2>
+        <p>The <code>!important</code> declaration can be added to a CSS rule to give it higher priority over other rules.</p>
+        <div class="code-example">
+            <pre>
+p {
+    color: blue !important; /* This will override other color rules */
+}
+            </pre>
+        </div>
+    </div>
+
+    <div class="section">
+        <h2>CSS Math Functions</h2>
+        <p>CSS includes math functions like <code>calc()</code> for calculations.</p>
+        <div class="code-example">
+            <pre>
+div {
+    width: calc(100% - 50px); /* 100% minus 50 pixels */
+}
+            </pre>
+        </div>
+    </div>
+
+</body>
+</html>
