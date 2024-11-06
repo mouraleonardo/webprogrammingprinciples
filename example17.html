@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Responsive Web Design Tutorial</title>
+  <style>
+    /* Base Styles */
+    body {
+      font-family: Arial, sans-serif;
+      line-height: 1.6;
+      margin: 20px;
+      background-color: #f9f9f9;
+      color: #333;
+    }
+
+    h1, h2 {
+      color: #444;
+    }
+
+    /* Table Styles */
+    table {
+      border-collapse: collapse;
+      width: 100%;
+      margin: 10px 0;
+    }
+
+    th, td {
+      padding: 10px;
+      text-align: left;
+      border: 1px solid #ddd;
+    }
+
+    th {
+      background-color: #4CAF50;
+      color: white;
+    }
+
+    /* Section and Code Example Styles */
+    .section {
+      margin-bottom: 40px;
+      padding: 20px;
+      background-color: #fff;
+      border: 1px solid #ccc;
+      border-radius: 10px;
+    }
+
+    .code-example {
+      background-color: #f8f9fa;
+      padding: 15px;
+      border: 1px solid #ddd;
+      border-radius: 5px;
+      margin: 10px 0;
+      font-family: monospace;
+    }
+
+    /* Responsive Grid System */
+    [class*="col-"] {
+      float: left;
+      padding: 15px;
+      border: 1px solid red;
+    }
+
+    .row::after {
+      content: "";
+      clear: both;
+      display: table;
+    }
+
+    /* Responsive Media */
+    img, video {
+      max-width: 100%;
+      height: auto;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Responsive Web Design Tutorial</h1>
+
+  <!-- Introduction Section -->
+  <div class="section">
+    <h2>Introduction</h2>
+    <p>Responsive web design ensures your web page looks good on all devices using only HTML and CSS. It optimizes layout for screens of all sizes, like desktops, tablets, and phones.</p>
+    <p>This technique resizes, hides, shrinks, enlarges, or moves content to look good on any screen.</p>
+  </div>
+
+  <!-- Viewport Section -->
+  <div class="section">
+    <h2>Setting The Viewport</h2>
+    <p>The viewport is the user’s visible area of a web page. It varies with device and was introduced in HTML5 for control over dimensions and scaling.</p>
+    <p>To make the web page responsive, add the following viewport meta tag to the HTML <code>&lt;head&gt;</code>:</p>
+    <div class="code-example">
+      <pre>
+&lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;
+      </pre>
+    </div>
+    <p>The code sets the page width to the device screen-width and initial zoom level to 1.0, ensuring no horizontal scrolling.</p>
+  </div>
+
+  <!-- Grid-View Section -->
+  <div class="section">
+    <h2>Grid-View</h2>
+    <p>A grid-view layout divides the page into columns, making it easier to place elements responsively. A 12-column grid is common in responsive design.</p>
+    <p>Example: Define a grid layout using CSS:</p>
+    <div class="code-example">
+      <pre>
+/* CSS Example */
+* {
+  box-sizing: border-box;
+}
+
+.menu {
+  width: 25%;
+  float: left;
+}
+
+.main {
+  width: 75%;
+  float: left;
+}
+      </pre>
+    </div>
+    <p>In a 12-column layout, you might assign each column a percentage width:</p>
+    <div class="code-example">
+      <pre>
+/* Column Widths */
+.col-1 { width: 8.33%; }
+.col-2 { width: 16.66%; }
+/* And so on up to */
+.col-12 { width: 100%; }
+      </pre>
+    </div>
+    <p>HTML Layout Example:</p>
+    <div class="code-example">
+      <pre>
+&lt;div class="row"&gt;
+  &lt;div class="col-3"&gt;...&lt;/div&gt;  <!-- 25% -->
+  &lt;div class="col-9"&gt;...&lt;/div&gt;  <!-- 75% -->
+&lt;/div&gt;
+      </pre>
+    </div>
+  </div>
+
+  <!-- Responsive Images Section -->
+  <div class="section">
+    <h2>Responsive Images</h2>
+    <p>Images should resize to fit various screens. Set width to 100% and height to auto for responsive images:</p>
+    <div class="code-example">
+      <pre>
+img {
+  max-width: 100%;
+  height: auto;
+}
+      </pre>
+    </div>
+    <p>The <code>max-width</code> property makes the image scale down if needed but won’t exceed its original size.</p>
+  </div>
+
+  <!-- Media Queries Section -->
+  <div class="section">
+    <h2>Media Queries</h2>
+    <p>Media queries apply CSS rules conditionally based on screen size using the <code>@media</code> rule.</p>
+    <p>Example: Change background color when the screen width is 600px or smaller:</p>
+    <div class="code-example">
+      <pre>
+@media only screen and (max-width: 600px) {
+  body {
+    background-color: lightblue;
+  }
+}
+      </pre>
+    </div>
+  </div>
+
+  <!-- Breakpoints Section -->
+  <div class="section">
+    <h2>Breakpoints</h2>
+    <p>Breakpoints are specific screen widths at which the layout changes. For small screens, set columns to 100% width:</p>
+    <div class="code-example">
+      <pre>
+@media only screen and (max-width: 768px) {
+  [class*="col-"] {
+    width: 100%;
+  }
+}
+      </pre>
+    </div>
+    <p><strong>Mobile First:</strong> Design for mobile screens first. Here’s an example layout that adds columns for larger screens:</p>
+    <div class="code-example">
+      <pre>
+/* Mobile Phones */
+[class*="col-"] {
+  width: 100%;
+}
+
+@media only screen and (min-width: 768px) {
+  /* Desktop Layout */
+  .col-1 { width: 8.33%; }
+  .col-2 { width: 16.66%; }
+  /* up to col-12 */
+}
+      </pre>
+    </div>
+  </div>
+
+  <!-- Orientation and Device Breakpoints Section -->
+  <div class="section">
+    <h2>Orientation and Device Breakpoints</h2>
+    <p>Media queries can also respond to screen orientation:</p>
+    <div class="code-example">
+      <pre>
+@media only screen and (orientation: landscape) {
+  body {
+    background-color: lightblue;
+  }
+}
+      </pre>
+    </div>
+    <p>Examples of device-specific breakpoints:</p>
+    <div class="code-example">
+      <pre>
+/* Extra small devices (600px and down) */
+@media only screen and (max-width: 600px) {...}
+
+/* Small devices (600px and up) */
+@media only screen and (min-width: 600px) {...}
+
+/* Medium devices (768px and up) */
+@media only screen and (min-width: 768px) {...}
+      </pre>
+    </div>
+  </div>
+
+  <!-- Responsive Videos Section -->
+  <div class="section">
+    <h2>Responsive Videos</h2>
+    <p>Set video width to 100% and height to auto for responsive video players:</p>
+    <div class="code-example">
+      <pre>
+video {
+  max-width: 100%;
+  height: auto;
+}
+      </pre>
+    </div>
+    <p>This ensures the video scales smoothly across devices without exceeding original dimensions.</p>
+  </div>
+
+</body>
+</html>
