@@ -60,6 +60,10 @@ You can open your browser's developer tools (press `F12` or `Ctrl+Shift+I` in mo
 - `example13.html`: HTML Element Reference.
 - `example14.html`: Interactive Document Object Model (DOM) Programming Tutorial
 - `example15.html`: EcoTravel - Discover the World, Sustainably (Assignment Sample)
+- `example16.html`: CSS Tutorial.
+- `example17.html`: Responsive Web Design Tutorial.
+- `example18.html`: Responsive Web Design - Images.
+- `example19.html`: HTML Forms and Input Controls.
 - ... more to be added as the course progresses.
 
 ---
