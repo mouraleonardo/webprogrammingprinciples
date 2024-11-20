@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTML Form Validation with Examples</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 20px;
+        }
+        form {
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            background-color: #f9f9f9;
+        }
+        label {
+            display: block;
+            margin-bottom: 5px;
+        }
+        input, select, textarea, button {
+            width: 100%;
+            padding: 8px;
+            margin-bottom: 15px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+        button {
+            background-color: #007BFF;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #0056b3;
+        }
+        pre {
+            background-color: #f4f4f4;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            overflow-x: auto;
+        }
+        .explanation {
+            font-size: 0.9em;
+            color: #555;
+            margin-bottom: 15px;
+        }
+        .error-message {
+            color: red;
+            font-size: 0.9em;
+        }
+        .center{
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <div class="center">
+        <h1>HTML Form Validation with Practical Examples</h1>
+        <p>This form demonstrates various HTML5 validation attributes and their usage with practical examples.</p>
+    </div>
+    <form id="exampleForm" novalidate>
+        <!-- Full Name -->
+        <label for="name">Full Name (required)</label>
+        <input type="text" id="name" name="name" required placeholder="Enter your full name">
+        <span class="error-message" id="nameError"></span>
+        <div class="explanation">
+            <p>The <code>required</code> attribute ensures the user cannot leave this field blank.</p>
+            <pre>
+&lt;input type="text" id="name" name="name" required placeholder="Enter your full name"&gt;
+            </pre>
+        </div>
+
+        <!-- Email Address -->
+        <label for="email">Email Address (must be valid)</label>
+        <input type="email" id="email" name="email" required placeholder="Enter a valid email">
+        <span class="error-message" id="emailError"></span>
+        <div class="explanation">
+            <p>Using <code>type="email"</code> validates that the input is a properly formatted email address.</p>
+            <pre>
+&lt;input type="email" id="email" name="email" required placeholder="Enter a valid email"&gt;
+            </pre>
+        </div>
+
+        <!-- Age -->
+        <label for="age">Age (18-100)</label>
+        <input type="number" id="age" name="age" required min="18" max="100" placeholder="Enter your age">
+        <span class="error-message" id="ageError"></span>
+        <div class="explanation">
+            <p>The <code>min</code> and <code>max</code> attributes restrict the input to a specific range.</p>
+            <pre>
+&lt;input type="number" id="age" name="age" required min="18" max="100" placeholder="Enter your age"&gt;
+            </pre>
+        </div>
+
+        <!-- Password -->
+        <label for="password">Password (at least 8 characters, 1 number, 1 letter)</label>
+        <input type="password" id="password" name="password" required 
+               pattern="(?=.*\d)(?=.*[a-zA-Z]).{8,}" 
+               placeholder="Create a strong password">
+        <span class="error-message" id="passwordError"></span>
+        <div class="explanation">
+            <p>The <code>pattern</code> attribute ensures the password meets custom criteria: at least 8 characters, 1 number, and 1 letter.</p>
+            <pre>
+&lt;input type="password" id="password" name="password" required 
+       pattern="(?=.*\d)(?=.*[a-zA-Z]).{8,}" 
+       placeholder="Create a strong password"&gt;
+            </pre>
+        </div>
+
+        <!-- Password Confirmation -->
+        <label for="confirmPassword">Confirm Password</label>
+        <input type="password" id="confirmPassword" name="confirmPassword" required placeholder="Confirm your password">
+        <span class="error-message" id="confirmPasswordError"></span>
+        <div class="explanation">
+            <p>Make sure the confirmation password matches the original password.</p>
+            <pre>
+&lt;input type="password" id="confirmPassword" name="confirmPassword" required placeholder="Confirm your password"&gt;
+            </pre>
+        </div>
+
+        <!-- Gender -->
+        <label>Gender</label>
+        <input type="radio" id="male" name="gender" value="male" required>
+        <label for="male">Male</label>
+        <input type="radio" id="female" name="gender" value="female" required>
+        <label for="female">Female</label>
+        <span class="error-message" id="genderError"></span>
+        <div class="explanation">
+            <p>Radio buttons allow only one option to be selected. The <code>required</code> attribute ensures a gender is selected.</p>
+            <pre>
+&lt;input type="radio" id="male" name="gender" value="male" required&gt; Male
+&lt;input type="radio" id="female" name="gender" value="female" required&gt; Female
+&lt;input type="radio" id="other" name="gender" value="other" required&gt; Other
+            </pre>
+        </div>
+
+        <!-- Interests (Checkboxes) -->
+        <label for="interests">Interests</label>
+        <input type="checkbox" id="coding" name="interests" value="coding">
+        <label for="coding">Coding</label>
+        <input type="checkbox" id="gaming" name="interests" value="gaming">
+        <label for="gaming">Gaming</label>
+        <input type="checkbox" id="reading" name="interests" value="reading">
+        <label for="reading">Reading</label>
+        <span class="error-message" id="interestsError"></span>
+        <div class="explanation">
+            <p>Checkboxes allow the user to select multiple options. The form requires at least one checkbox to be selected.</p>
+            <pre>
+&lt;input type="checkbox" id="coding" name="interests" value="coding"&gt; Coding
+&lt;input type="checkbox" id="gaming" name="interests" value="gaming"&gt; Gaming
+&lt;input type="checkbox" id="reading" name="interests" value="reading"&gt; Reading
+            </pre>
+        </div>
+
+        <!-- Comments -->
+        <label for="comments">Comments</label>
+        <textarea id="comments" name="comments" required minlength="5" placeholder="Enter your comments"></textarea>
+        <span class="error-message" id="commentsError"></span>
+        <div class="explanation">
+            <p>The <code>minlength</code> attribute ensures that the user enters at least 5 characters in the text area.</p>
+            <pre>
+&lt;textarea id="comments" name="comments" required minlength="5" placeholder="Enter your comments"&gt;&lt;/textarea&gt;
+            </pre>
+        </div>
+
+        <!-- Country -->
+        <label for="country">Country</label>
+        <select id="country" name="country" required>
+            <option value="">--Select your country--</option>
+            <option value="usa">United States</option>
+            <option value="canada">Canada</option>
+            <option value="uk">United Kingdom</option>
+        </select>
+        <span class="error-message" id="countryError"></span>
+        <div class="explanation">
+            <p>The <code>required</code> attribute ensures the user selects a value from the dropdown list.</p>
+            <pre>
+&lt;select id="country" name="country" required&gt;
+    &lt;option value="usa"&gt;United States&lt;/option&gt;
+    &lt;option value="canada"&gt;Canada&lt;/option&gt;
+    &lt;option value="uk"&gt;United Kingdom&lt;/option&gt;
+&lt;/select&gt;
+            </pre>
+        </div>
+
+        <!-- Submit Button -->
+        <button type="submit">Submit</button>
+    </form>
+
+    <script>
+        document.getElementById('exampleForm').addEventListener('submit', function(event) {
+            event.preventDefault();
+            
+            let isValid = true;
+            
+            // Full Name Validation
+            const name = document.getElementById('name');
+            const nameError = document.getElementById('nameError');
+            if (name.value === "") {
+                nameError.textContent = "Full Name is required.";
+                isValid = false;
+            } else {
+                nameError.textContent = "";
+            }
+
+            // Email Validation
+            const email = document.getElementById('email');
+            const emailError = document.getElementById('emailError');
+            const emailPattern = /^[^@]+@[^@]+\.[^@]+$/;
+            if (!email.value.match(emailPattern)) {
+                emailError.textContent = "Please enter a valid email address.";
+                isValid = false;
+            } else {
+                emailError.textContent = "";
+            }
+
+            // Age Validation
+            const age = document.getElementById('age');
+            const ageError = document.getElementById('ageError');
+            if (age.value < 18 || age.value > 100) {
+                ageError.textContent = "Age must be between 18 and 100.";
+                isValid = false;
+            } else {
+                ageError.textContent = "";
+            }
+
+            // Password Validation
+            const password = document.getElementById('password');
+            const passwordError = document.getElementById('passwordError');
+            const passwordPattern = /^(?=.*\d)(?=.*[a-zA-Z]).{8,}$/;
+            if (!password.value.match(passwordPattern)) {
+                passwordError.textContent = "Password must be at least 8 characters long, including 1 letter and 1 number.";
+                isValid = false;
+            } else {
+                passwordError.textContent = "";
+            }
+
+            // Password Confirmation
+            const confirmPassword = document.getElementById('confirmPassword');
+            const confirmPasswordError = document.getElementById('confirmPasswordError');
+            if (confirmPassword.value !== password.value) {
+                confirmPasswordError.textContent = "Passwords do not match.";
+                isValid = false;
+            } else {
+                confirmPasswordError.textContent = "";
+            }
+
+            // Gender Validation
+            const genderError = document.getElementById('genderError');
+            if (!document.querySelector('input[name="gender"]:checked')) {
+                genderError.textContent = "Please select a gender.";
+                isValid = false;
+            } else {
+                genderError.textContent = "";
+            }
+
+            // Interests Validation
+            const interestsError = document.getElementById('interestsError');
+            if (!document.querySelector('input[name="interests"]:checked')) {
+                interestsError.textContent = "Please select at least one interest.";
+                isValid = false;
+            } else {
+                interestsError.textContent = "";
+            }
+
+            // Comments Validation
+            const comments = document.getElementById('comments');
+            const commentsError = document.getElementById('commentsError');
+            if (comments.value.length < 5) {
+                commentsError.textContent = "Comments must be at least 5 characters long.";
+                isValid = false;
+            } else {
+                commentsError.textContent = "";
+            }
+
+            // Country Validation
+            const country = document.getElementById('country');
+            const countryError = document.getElementById('countryError');
+            if (country.value === "") {
+                countryError.textContent = "Please select your country.";
+                isValid = false;
+            } else {
+                countryError.textContent = "";
+            }
+
+            if (isValid) {
+                alert("Form successfully submitted!");
+            }
+        });
+    </script>
+</body>
+</html>

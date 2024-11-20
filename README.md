@@ -64,6 +64,7 @@ You can open your browser's developer tools (press `F12` or `Ctrl+Shift+I` in mo
 - `example17.html`: Responsive Web Design Tutorial.
 - `example18.html`: Responsive Web Design - Images.
 - `example19.html`: HTML Forms and Input Controls.
+- `example20.html`: HTML Form Validation with Examples.
 - ... more to be added as the course progresses.
 
 ---
