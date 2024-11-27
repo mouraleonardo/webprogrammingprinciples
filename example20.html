@@ -136,7 +136,6 @@
             <pre>
 &lt;input type="radio" id="male" name="gender" value="male" required&gt; Male
 &lt;input type="radio" id="female" name="gender" value="female" required&gt; Female
-&lt;input type="radio" id="other" name="gender" value="other" required&gt; Other
             </pre>
         </div>
 
@@ -212,7 +211,7 @@
             // Email Validation
             const email = document.getElementById('email');
             const emailError = document.getElementById('emailError');
-            const emailPattern = /^[^@]+@[^@]+\.[^@]+$/;
+            const emailPattern = /^([^\s@]+)@([^\s@]+)\.[a-zA-Z]{2,}$/;
             if (!email.value.match(emailPattern)) {
                 emailError.textContent = "Please enter a valid email address.";
                 isValid = false;
